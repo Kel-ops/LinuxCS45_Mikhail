@@ -1,0 +1,51 @@
+CIS45 - Midterm Pratical Exam
+
+Before you start, make a directory under your home called 'lab-midterm'.
+
+1. A regular text file exist somewhere under /home. Find the name of the file that has the 10 digits which represents the USA phone number such as : 408-214-3872 . Remember that it could be any phone number that matches this pattern.
+
+   a. Show the command to do this.
+      $
+
+   b. What is the name of the file? __________data.txt
+
+
+
+2. From the file that you found, how many of those phone numbers have two digits at the end that are the same.
+   a. From the file in step 1, write an expression to get only the phone numbers 
+      where the last two digits are the same
+   
+   b. What are the phone numbers?
+
+
+   c. Write an expression to remove the dashes '-' from the phone numbers above where
+      the last two digits of the phone numbers are the same.
+
+      What expression did you use?
+      What are the resulting numbers you have left?(Your answer should look something
+      like this number with 8 digits: 40820347    
+
+3. A file exist on the system where the inode number of the file happens
+   to be the result of the expression you wrote above in #2c. Find all 
+   files on the system that has an inode number that matches the number you
+   found where the last two digits are the same from #2c above and copy them
+   to your lab-midterm directory.
+
+
+
+5. In your Lab Midterm directory, create a directory called final-output
+   that has read , write and execute for everyone plus the sticky bit set.
+
+  
+
+6. Copy all files from the /etc directory that begins with the letter 'p'
+   into your final-output directory.
+
+
+7. Go into your final output directory and put all the files into a zip
+   file called final-output.zip
+
+
+8. Copy the compress tar file called 'bigdat' from the /tmp into your 
+final-output directory, then uncompress and extract the data.
+

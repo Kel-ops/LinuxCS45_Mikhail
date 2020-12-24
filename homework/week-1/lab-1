@@ -1,0 +1,810 @@
+khail Ball
+CIS45
+LAB-1-09/05/20
+
+
+1.
+[mball@mars ~]$ ssh cis45
+cs45aa24@209.129.148.10's password:
+Permission denied, please try again.
+cs45aa24@209.129.148.10's password:
+Last failed login: Wed Sep 23 00:02:30 EDT 2020 from c-73-15-56-126.hsd1.ca.comcast.net on ssh:notty
+There was 1 failed login attempt since the last successful login.
+Last login: Sat Sep 19 15:46:59 2020 from c-73-15-56-126.hsd1.ca.comcast.net
+
+2.
+[cs45aa24@mc-redhat01 ~]$ id
+uid=1024(cs45aa24) gid=1024(cs45aa24) groups=1024(cs45aa24) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+
+3.
+[cs45aa24@mc-redhat01 ~]$ id -r
+id: cannot print only names or real IDs in default format
+[cs45aa24@mc-redhat01 ~]$ id -u
+1024
+
+id -r : print the real ID instead of the effective ID
+id -u : print only the effective user ID
+
+4.
+[cs45aa24@mc-redhat01 ~]$ [cs45aa24@mc-redhat01 ~]$ who
+hcampbell pts/0        2020-09-20 16:52 (c-73-41-184-155.hsd1.ca.comcast.net)
+cs45aa24 pts/1        2020-09-23 00:02 (c-73-15-56-126.hsd1.ca.comcast.net)
+
+5.
+[cs45aa24@mc-redhat01 ~]$ tty
+/dev/pts/1
+
+6.
+[cs45aa24@mc-redhat01 ~]$ w
+ 00:07:50 up 19 days, 13 min,  2 users,  load average: 0.00, 0.01, 0.05
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+hcampbel pts/0    c-73-41-184-155. Sun16   47:11m  0.07s  0.07s -bash
+cs45aa24 pts/1    c-73-15-56-126.h 00:02    6.00s  0.07s  0.02s w
+
+7.
+W(1)                                                User Commands                                                W(1)
+
+NAME
+       w - Show who is logged on and what they are doing.
+
+SYNOPSIS
+       w [options] user [...]
+
+DESCRIPTION
+       w  displays  information  about the users currently on the machine, and their processes.  The header shows, in
+       this order, the current time, how long the system has been running, how many users are  currently  logged  on,
+       and the system load averages for the past 1, 5, and 15 minutes.
+
+       The following entries are displayed for each user: login name, the tty name, the remote host, login time, idle
+       time, JCPU, PCPU, and the command line of their current process.
+
+       The JCPU time is the time used by all processes attached to the tty.  It  does  not  include  past  background
+       jobs, but does include currently running background jobs.
+
+       The PCPU time is the time used by the current process, named in the "what" field.
+
+8.
+File: *manpages*,  Node: man,  Up: (dir)
+
+MAN(1)                        Manual pager utils                        MAN(1)
+
+
+
+NAME
+       man - an interface to the on-line reference manuals
+
+SYNOPSIS
+       man  [-C  file]  [-d]  [-D]  [--warnings[=warnings]]  [-R encoding] [-L
+       locale] [-m system[,...]] [-M path] [-S list]  [-e  extension]  [-i|-I]
+       [--regex|--wildcard]   [--names-only]  [-a]  [-u]  [--no-subpages]  [-P
+       pager] [-r prompt] [-7] [-E encoding] [--no-hyphenation] [--no-justifi
+       cation]  [-p  string]  [-t]  [-T[device]]  [-H[browser]] [-X[dpi]] [-Z]
+       [[section] page ...] ...
+       man -k [apropos options] regexp ...
+       man -K [-w|-W] [-S list] [-i|-I] [--regex] [section] term ...
+       man -f [whatis options] page ...
+       man -l [-C file] [-d] [-D] [--warnings[=warnings]]  [-R  encoding]  [-L
+       locale]  [-P  pager]  [-r  prompt]  [-7] [-E encoding] [-p string] [-t]
+       [-T[device]] [-H[browser]] [-X[dpi]] [-Z] file ...
+       man -w|-W [-C file] [-d] [-D] page ...
+       man -c [-C file] [-d] [-D] page ...
+       man [-?V]
+
+DESCRIPTION
+       man is the system's manual pager. Each page argument given  to  man  is
+       normally  the  name of a program, utility or function.  The manual page
+       associated with each of these arguments is then found and displayed.  A
+       section,  if  provided, will direct man to look only in that section of
+       the manual.  The default action is to search in all  of  the  available
+       sections, following a pre-defined order and to show only the first page
+       found, even if page exists in several sections.
+
+9.
+[cs45aa24@mc-redhat01 ~]$ hostname
+mc-redhat01
+
+10.
+[cs45aa24@mc-redhat01 ~]$ hostname --help
+Usage: hostname [-b] {hostname|-F file}         set host name (from file)
+       hostname [-a|-A|-d|-f|-i|-I|-s|-y]       display formatted name
+       hostname                                 display host name
+
+       {yp,nis,}domainname {nisdomain|-F file}  set NIS domain name (from file)
+       {yp,nis,}domainname                      display NIS domain name
+
+       dnsdomainname                            display dns domain name
+
+       hostname -V|--version|-h|--help          print info and exit
+
+Program name:
+       {yp,nis,}domainname=hostname -y
+       dnsdomainname=hostname -d
+
+Program options:
+    -a, --alias            alias names
+    -A, --all-fqdns        all long host names (FQDNs)
+    -b, --boot             set default hostname if none available
+    -d, --domain           DNS domain name
+    -f, --fqdn, --long     long host name (FQDN)
+    -F, --file             read host name or NIS domain name from given file
+    -i, --ip-address       addresses for the host name
+    -I, --all-ip-addresses all addresses for the host
+    -s, --short            short host name
+    -y, --yp, --nis        NIS/YP domain name
+
+Description:
+   This command can get or set the host name or the NIS domain name. You can
+   also get the DNS domain or the FQDN (fully qualified domain name).
+   Unless you are using bind or NIS for host lookups you can change the
+   FQDN (Fully Qualified Domain Name) and the DNS domain name (which is
+   part of the FQDN) in the /etc/hosts file.
+
+[cs45aa24@mc-redhat01 ~]$ hostname -f
+mc-redhat01
+
+11.
+[cs45aa24@mc-redhat01 ~]$ man -k printf
+asprintf (3)         - print to allocated string
+dprintf (3)          - print to a file descriptor
+fprintf (3)          - formatted output conversion
+fprintf (3p)         - print formatted output
+fwprintf (3)         - formatted wide-character output conversion
+fwprintf (3p)        - print formatted wide-character output
+ldns_buffer_printf (3) - (unknown subject)
+printf (1)           - format and print data
+printf (1p)          - write formatted output
+printf (3)           - formatted output conversion
+printf (3p)          - print formatted output
+snprintf (3)         - formatted output conversion
+snprintf (3p)        - print formatted output
+sprintf (3)          - formatted output conversion
+sprintf (3p)         - print formatted output
+swprintf (3)         - formatted wide-character output conversion
+swprintf (3p)        - print formatted wide-character output
+vasprintf (3)        - print to allocated string
+vdprintf (3)         - print to a file descriptor
+vfprintf (3)         - formatted output conversion
+vfprintf (3p)        - format output of a stdarg argument list
+vfwprintf (3)        - formatted wide-character output conversion
+vfwprintf (3p)       - wide-character formatted output of a stdarg argument list
+vprintf (3)          - formatted output conversion
+vprintf (3p)         - format output of a stdarg argument list
+vsnprintf (3)        - formatted output conversion
+vsnprintf (3p)       - format output of a stdarg argument list
+vsprintf (3)         - formatted output conversion
+vsprintf (3p)        - format output of a stdarg argument list
+vswprintf (3)        - formatted wide-character output conversion
+vswprintf (3p)       - wide-character formatted output of a stdarg argument list
+vwprintf (3)         - formatted wide-character output conversion
+vwprintf (3p)        - wide-character formatted output of a stdarg argument list
+wprintf (3)          - formatted wide-character output conversion
+wprintf (3p)         - print formatted wide-character output
+
+12.
+FPRINTF(3P)                                   POSIX Programmer's Manual                                   FPRINTF(3P)
+
+PROLOG
+       This  manual  page  is  part of the POSIX Programmer's Manual.  The Linux implementation of this interface may
+       differ (consult the corresponding Linux manual page for details of Linux behavior), or the interface  may  not
+       be implemented on Linux.
+
+NAME
+       fprintf, printf, snprintf, sprintf - print formatted output
+
+SYNOPSIS
+       #include <stdio.h>
+
+       int fprintf(FILE *restrict stream, const char *restrict format, ...);
+       int printf(const char *restrict format, ...);
+       int snprintf(char *restrict s, size_t n,
+              const char *restrict format, ...);
+       int sprintf(char *restrict s, const char *restrict format, ...);
+
+DESCRIPTION
+       The fprintf() function shall place output on the named output stream. The printf() function shall place output
+       on the standard output stream stdout. The sprintf() function shall place output followed  by  the  null  byte,
+       '\0',  in  consecutive  bytes  starting  at *s; it is the user's responsibility to ensure that enough space is
+       available.
+
+       The snprintf() function shall be equivalent to sprintf(), with the addition of the n argument which states the
+       size of the buffer referred to by s. If n is zero, nothing shall be written and s may be a null pointer.  Oth
+       erwise, output bytes beyond the n-1st shall be discarded instead of being written to the  array,  and  a  null
+       byte is written at the end of the bytes actually written into the array.
+
+13.
+WGET(1)                                                GNU Wget                                               WGET(1)
+
+NAME
+       Wget - The non-interactive network downloader.
+
+SYNOPSIS
+       wget [option]... [URL]...
+
+DESCRIPTION
+       GNU Wget is a free utility for non-interactive download of files from the Web.  It supports HTTP, HTTPS, and
+       FTP protocols, as well as retrieval through HTTP proxies.
+
+       Wget is non-interactive, meaning that it can work in the background, while the user is not logged on.  This
+       allows you to start a retrieval and disconnect from the system, letting Wget finish the work.  By contrast,
+       most of the Web browsers require constant user's presence, which can be a great hindrance when transferring a
+       lot of data.
+
+       Wget can follow links in HTML, XHTML, and CSS pages, to create local versions of remote web sites, fully
+       recreating the directory structure of the original site.  This is sometimes referred to as "recursive
+       downloading."  While doing that, Wget respects the Robot Exclusion Standard (/robots.txt).  Wget can be
+       instructed to convert the links in downloaded files to point at the local files, for offline viewing.
+
+       Wget has been designed for robustness over slow or unstable network connections; if a download fails due to a
+       network problem, it will keep retrying until the whole file has been retrieved.  If the server supports
+       regetting, it will instruct the server to continue the download from where it left off.
+
+14.
+[cs45aa24@mc-redhat01 ~]$ echo $0
+-bash
+
+15.
+[cs45aa24@mc-redhat01 ~]$ echo $SHELL
+/bin/bash
+
+16.
+[cs45aa24@mc-redhat01 ~]$ echo $PATH
+/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/cs45aa24/.local/bin:/home/cs45aa24/bin
+
+17.
+[cs45aa24@mc-redhat01 ~]$ pizza
+bash: pizza: command not found...
+
+18.
+[cs45aa24@mc-redhat01 ~]$ su - mr-tester
+Password:
+Last login: Sun Sep 20 16:14:00 EDT 2020 on pts/0
+Last failed login: Wed Sep 23 00:15:41 EDT 2020 on pts/1
+There were 2 failed login attempts since the last successful login.
+[mr-tester@mc-redhat01 ~]$ pwd
+/home/mr-tester
+[mr-tester@mc-redhat01 ~]$ whoami
+mr-tester
+[mr-tester@mc-redhat01 ~]$ who am i
+cs45aa24 pts/1        2020-09-23 00:02 (c-73-15-56-126.hsd1.ca.comcast.net)
+[mr-tester@mc-redhat01 ~]$ exit
+logout
+[cs45aa24@mc-redhat01 ~]$ whoami
+cs45aa24
+
+19.
+[cs45aa24@mc-redhat01 ~]$ su mr-tester
+Password:
+[mr-tester@mc-redhat01 cs45aa24]$ pwd
+/home/cs45aa24
+[mr-tester@mc-redhat01 cs45aa24]$ whoami
+mr-tester
+[mr-tester@mc-redhat01 cs45aa24]$ who am i
+cs45aa24 pts/1        2020-09-23 00:02 (c-73-15-56-126.hsd1.ca.comcast.net)
+
+20.
+[cs45aa24@mc-redhat01 ~]$ last
+cs45aa40 pts/2        107-128-208-37.l Wed Sep 23 00:16   still logged in
+cs45aa24 pts/1        c-73-15-56-126.h Wed Sep 23 00:02   still logged in
+cs45aa40 pts/1        107-128-208-37.l Tue Sep 22 21:29 - 21:53  (00:23)
+cs45aa08 pts/2                         Tue Sep 22 18:57 - 20:00  (01:03)
+cs45aa08 pts/2                         Tue Sep 22 18:55 - 18:56  (00:00)
+cs45aa08 pts/1        73.63.216.8      Tue Sep 22 18:42 - 20:45  (02:02)
+cs45aa08 pts/2                         Tue Sep 22 18:36 - 18:39  (00:03)
+cs45aa05 pts/3        c-73-231-130-237 Tue Sep 22 18:03 - 18:58  (00:55)
+cs45aa08 pts/2                         Tue Sep 22 17:21 - 18:35  (01:14)
+cs45aa08 pts/1        73.63.216.8      Tue Sep 22 17:19 - 18:40  (01:20)
+cs45aa15 pts/1        8.33.138.40      Tue Sep 22 15:27 - 16:38  (01:10)
+cs45aa19 pts/2        c-71-204-184-216 Tue Sep 22 13:46 - 15:29  (01:43)
+cs45aa15 pts/1        8.33.138.40      Tue Sep 22 13:18 - 14:31  (01:12)
+cs45aa05 pts/1        c-73-231-130-237 Tue Sep 22 02:39 - 04:06  (01:27)
+cs45aa29 pts/3        99-43-252-68.lig Tue Sep 22 01:12 - 03:12  (02:00)
+cs45aa19 pts/2                         Tue Sep 22 00:55 - 01:24  (00:28)
+cs45aa19 pts/1        c-71-204-184-216 Tue Sep 22 00:27 - 02:32  (02:05)
+cs45aa08 pts/1        73.63.216.8      Mon Sep 21 19:22 - 21:35  (02:12)
+cs45aa08 pts/1        73.63.216.8      Mon Sep 21 19:05 - 19:21  (00:15)
+cs45aa19 pts/2                         Mon Sep 21 02:30 - 02:38  (00:07)
+cs45aa19 pts/1        c-71-204-184-216 Mon Sep 21 01:44 - 02:39  (00:55)
+cs45aa40 pts/2        107-128-208-37.l Sun Sep 20 17:37 - 20:18  (02:41)
+hcampbel pts/0        c-73-41-184-155. Sun Sep 20 16:52   still logged in
+cs45aa15 pts/3        c-98-234-14-245. Sun Sep 20 13:11 - 13:22  (00:11)
+cs45aa15 pts/3        c-98-234-14-245. Sun Sep 20 13:01 - 13:10  (00:09)
+cs45aa14 pts/2        c-71-202-157-46. Sun Sep 20 12:55 - 13:15  (00:19)
+cs45aa29 pts/2        96-64-213-11-sta Sun Sep 20 12:19 - 12:20  (00:01)
+cs45aa19 pts/3                         Sun Sep 20 02:13 - 02:23  (00:09)
+cs45aa19 pts/3                         Sun Sep 20 01:29 - 01:48  (00:18)
+
+[cs45aa24@mc-redhat01 ~]$ last mr-tester
+
+wtmp begins Thu Sep  3 23:10:23 2020
+
+21.
+[cs45aa24@mc-redhat01 ~]$ pinky hcampbell
+Login    Name                 TTY      Idle   When             Where
+hcampbell                      pts/0    1d     2020-09-20 16:52 c-73-41-184-155.hsd1.ca.comcast.net
+[cs45aa24@mc-redhat01 ~]$ pinky -l hcampbell
+Login name: hcampbell                   In real life:
+Directory: /home/hcampbell              Shell:  /bin/bash
+
+22.
+[cs45aa24@mc-redhat01 ~]$ cal 2020
+                               2020
+
+       January               February                 March
+Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa
+          1  2  3  4                      1    1  2  3  4  5  6  7
+ 5  6  7  8  9 10 11    2  3  4  5  6  7  8    8  9 10 11 12 13 14
+12 13 14 15 16 17 18    9 10 11 12 13 14 15   15 16 17 18 19 20 21
+19 20 21 22 23 24 25   16 17 18 19 20 21 22   22 23 24 25 26 27 28
+26 27 28 29 30 31      23 24 25 26 27 28 29   29 30 31
+
+        April                   May                   June
+Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa
+          1  2  3  4                   1  2       1  2  3  4  5  6
+ 5  6  7  8  9 10 11    3  4  5  6  7  8  9    7  8  9 10 11 12 13
+12 13 14 15 16 17 18   10 11 12 13 14 15 16   14 15 16 17 18 19 20
+19 20 21 22 23 24 25   17 18 19 20 21 22 23   21 22 23 24 25 26 27
+26 27 28 29 30         24 25 26 27 28 29 30   28 29 30
+                       31
+        July                  August                September
+Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa
+          1  2  3  4                      1          1  2  3  4  5
+ 5  6  7  8  9 10 11    2  3  4  5  6  7  8    6  7  8  9 10 11 12
+12 13 14 15 16 17 18    9 10 11 12 13 14 15   13 14 15 16 17 18 19
+19 20 21 22 23 24 25   16 17 18 19 20 21 22   20 21 22 23 24 25 26
+26 27 28 29 30 31      23 24 25 26 27 28 29   27 28 29 30
+                       30 31
+       October               November               December
+Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa
+             1  2  3    1  2  3  4  5  6  7          1  2  3  4  5
+ 4  5  6  7  8  9 10    8  9 10 11 12 13 14    6  7  8  9 10 11 12
+11 12 13 14 15 16 17   15 16 17 18 19 20 21   13 14 15 16 17 18 19
+18 19 20 21 22 23 24   22 23 24 25 26 27 28   20 21 22 23 24 25 26
+25 26 27 28 29 30 31   29 30                  27 28 29 30 31
+
+
+[cs45aa24@mc-redhat01 ~]$ cal 1999
+                               1999
+
+       January               February                 March
+Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa
+                1  2       1  2  3  4  5  6       1  2  3  4  5  6
+ 3  4  5  6  7  8  9    7  8  9 10 11 12 13    7  8  9 10 11 12 13
+10 11 12 13 14 15 16   14 15 16 17 18 19 20   14 15 16 17 18 19 20
+17 18 19 20 21 22 23   21 22 23 24 25 26 27   21 22 23 24 25 26 27
+24 25 26 27 28 29 30   28                     28 29 30 31
+31
+        April                   May                   June
+Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa
+             1  2  3                      1          1  2  3  4  5
+ 4  5  6  7  8  9 10    2  3  4  5  6  7  8    6  7  8  9 10 11 12
+11 12 13 14 15 16 17    9 10 11 12 13 14 15   13 14 15 16 17 18 19
+18 19 20 21 22 23 24   16 17 18 19 20 21 22   20 21 22 23 24 25 26
+25 26 27 28 29 30      23 24 25 26 27 28 29   27 28 29 30
+                       30 31
+        July                  August                September
+Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa
+             1  2  3    1  2  3  4  5  6  7             1  2  3  4
+ 4  5  6  7  8  9 10    8  9 10 11 12 13 14    5  6  7  8  9 10 11
+11 12 13 14 15 16 17   15 16 17 18 19 20 21   12 13 14 15 16 17 18
+18 19 20 21 22 23 24   22 23 24 25 26 27 28   19 20 21 22 23 24 25
+25 26 27 28 29 30 31   29 30 31               26 27 28 29 30
+
+       October               November               December
+Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa   Su Mo Tu We Th Fr Sa
+                1  2       1  2  3  4  5  6             1  2  3  4
+ 3  4  5  6  7  8  9    7  8  9 10 11 12 13    5  6  7  8  9 10 11
+10 11 12 13 14 15 16   14 15 16 17 18 19 20   12 13 14 15 16 17 18
+17 18 19 20 21 22 23   21 22 23 24 25 26 27   19 20 21 22 23 24 25
+24 25 26 27 28 29 30   28 29 30               26 27 28 29 30 31
+31
+
+[cs45aa24@mc-redhat01 ~]$ cal 10 2025
+    October 2025
+Su Mo Tu We Th Fr Sa
+          1  2  3  4
+ 5  6  7  8  9 10 11
+12 13 14 15 16 17 18
+19 20 21 22 23 24 25
+26 27 28 29 30 31
+
+23.
+[cs45aa24@mc-redhat01 ~]$ date
+Wed Sep 23 00:22:23 EDT 2020
+[cs45aa24@mc-redhat01 ~]$ date +%F
+2020-09-23
+[cs45aa24@mc-redhat01 ~]$ date +%m
+09
+[cs45aa24@mc-redhat01 ~]$ date +%m-%d
+09-23
+[cs45aa24@mc-redhat01 ~]$ date +%m-%d-%y
+09-23-20
+[cs45aa24@mc-redhat01 ~]$
+
+24.
+[cs45aa24@mc-redhat01 ~]$ pwd
+/home/cs45aa24
+[cs45aa24@mc-redhat01 ~]$ dir
+homework
+
+25.
+[cs45aa24@mc-redhat01 ~]$ pwd
+/home/cs45aa24
+[cs45aa24@mc-redhat01 ~]$ cd /tmp
+[cs45aa24@mc-redhat01 tmp]$ ls
+cs45aa06-tester       hsperfdata_root
+cs45aa19-tester       jc_tester
+cs45aa29-tester       systemd-private-fec502a6b9904027a522561f4521303d-bolt.service-tak4di
+dira                  systemd-private-fec502a6b9904027a522561f4521303d-chronyd.service-1UkWBX
+dirR                  systemd-private-fec502a6b9904027a522561f4521303d-colord.service-ZNXfHP
+dirRR                 systemd-private-fec502a6b9904027a522561f4521303d-cups.service-trYkC0
+dirz                  systemd-private-fec502a6b9904027a522561f4521303d-fwupd.service-zs8IsP
+hsperfdata_hcampbell  systemd-private-fec502a6b9904027a522561f4521303d-rtkit-daemon.service-DLJ8yU
+[cs45aa24@mc-redhat01 tmp]$ ls -a
+.                     .ICE-unix
+..                    jc_tester
+cs45aa06-tester       systemd-private-fec502a6b9904027a522561f4521303d-bolt.service-tak4di
+cs45aa19-tester       systemd-private-fec502a6b9904027a522561f4521303d-chronyd.service-1UkWBX
+cs45aa29-tester       systemd-private-fec502a6b9904027a522561f4521303d-colord.service-ZNXfHP
+dira                  systemd-private-fec502a6b9904027a522561f4521303d-cups.service-trYkC0
+dirR                  systemd-private-fec502a6b9904027a522561f4521303d-fwupd.service-zs8IsP
+dirRR                 systemd-private-fec502a6b9904027a522561f4521303d-rtkit-daemon.service-DLJ8yU
+dirz                  .Test-unix
+.font-unix            .X0-lock
+hsperfdata_hcampbell  .X11-unix
+hsperfdata_root       .XIM-unix
+[cs45aa24@mc-redhat01 tmp]$ cd /
+[cs45aa24@mc-redhat01 /]$ ls -F
+bin@   dev/  home/  lib64@  mnt/  proc/  run/   srv/  tmp/  var/
+boot/  etc/  lib@   media/  opt/  root/  sbin@  sys/  usr/
+[cs45aa24@mc-redhat01 /]$ cd /tmp; ls -a; pwd; date
+.                     .ICE-unix
+..                    jc_tester
+cs45aa06-tester       systemd-private-fec502a6b9904027a522561f4521303d-bolt.service-tak4di
+cs45aa19-tester       systemd-private-fec502a6b9904027a522561f4521303d-chronyd.service-1UkWBX
+cs45aa29-tester       systemd-private-fec502a6b9904027a522561f4521303d-colord.service-ZNXfHP
+dira                  systemd-private-fec502a6b9904027a522561f4521303d-cups.service-trYkC0
+dirR                  systemd-private-fec502a6b9904027a522561f4521303d-fwupd.service-zs8IsP
+dirRR                 systemd-private-fec502a6b9904027a522561f4521303d-rtkit-daemon.service-DLJ8yU
+dirz                  .Test-unix
+.font-unix            .X0-lock
+hsperfdata_hcampbell  .X11-unix
+hsperfdata_root       .XIM-unix
+
+26.
+[cs45aa24@mc-redhat01 tmp]$ cd ~; ls -l
+total 0
+drwxrwxr-x. 17 cs45aa24 cs45aa24 207 Sep 17 01:48 homework
+[cs45aa24@mc-redhat01 ~]$ cd ; ls -al
+total 40
+drwx------.  6 cs45aa24 cs45aa24  195 Sep 17 23:30 .
+drwxr-xr-x. 50 root     root     4096 Sep 19 01:58 ..
+-rw-------.  1 cs45aa24 cs45aa24 6433 Sep 19 16:23 .bash_history
+-rw-r--r--.  1 cs45aa24 cs45aa24   18 Aug 21  2019 .bash_logout
+-rw-r--r--.  1 cs45aa24 cs45aa24  193 Aug 21  2019 .bash_profile
+-rw-r--r--.  1 cs45aa24 cs45aa24  231 Aug 21  2019 .bashrc
+drwxrwxr-x.  3 cs45aa24 cs45aa24   18 Sep  4 21:59 .cache
+drwxrwxr-x.  3 cs45aa24 cs45aa24   18 Sep  4 21:59 .config
+drwxrwxr-x. 17 cs45aa24 cs45aa24  207 Sep 17 01:48 homework
+-rw-------.  1 cs45aa24 cs45aa24 3160 Sep  9 18:32 .lesshst
+drwxr-xr-x.  4 cs45aa24 cs45aa24   39 Sep  3 22:26 .mozilla
+-rw-rw-r--.  1 cs45aa24 cs45aa24  139 Sep 17 00:47 .mydatafile
+-rw-------.  1 cs45aa24 cs45aa24 4967 Sep 17 23:30 .viminfo
+[cs45aa24@mc-redhat01 ~]$ cd $HOME; ls -a
+.   .bash_history  .bash_profile  .cache   homework  .mozilla     .viminfo
+..  .bash_logout   .bashrc        .config  .lesshst  .mydatafile
+[cs45aa24@mc-redhat01 ~]$ cd /tmp; pwd
+/tmp
+[cs45aa24@mc-redhat01 tmp]$ cd - ; pwd
+/home/cs45aa24
+/home/cs45aa24
+[cs45aa24@mc-redhat01 ~]$ cd ~mr-tester ; pwd
+/home/mr-tester
+[cs45aa24@mc-redhat01 mr-tester]$ cd /; ls
+bin  boot  dev  etc  home  lib  lib64  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+[cs45aa24@mc-redhat01 /]$ cd ~; pwd
+/home/cs45aa24
+[cs45aa24@mc-redhat01 ~]$ cd .. ; pwd
+/home
+[cs45aa24@mc-redhat01 home]$ pwd; cd ~
+/home
+[cs45aa24@mc-redhat01 ~]$ ls -a
+.   .bash_history  .bash_profile  .cache   homework  .mozilla     .viminfo
+..  .bash_logout   .bashrc        .config  .lesshst  .mydatafile
+
+27.
+[cs45aa24@mc-redhat01 ~]$ free
+              total        used        free      shared  buff/cache   available
+Mem:        5944904      673952     2010608      316944     3260344     4656232
+Swap:       6160380           0     6160380
+[cs45aa24@mc-redhat01 ~]$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:           5.7G        659M        1.9G        309M        3.1G        4.4G
+Swap:          5.9G          0B        5.9G
+[cs45aa24@mc-redhat01 ~]$ free --help ; man free
+
+Usage:
+ free [options]
+
+Options:
+ -b, --bytes         show output in bytes
+ -k, --kilo          show output in kilobytes
+ -m, --mega          show output in megabytes
+ -g, --giga          show output in gigabytes
+     --tera          show output in terabytes
+     --peta          show output in petabytes
+ -h, --human         show human-readable output
+     --si            use powers of 1000 not 1024
+ -l, --lohi          show detailed low and high memory statistics
+ -t, --total         show total for RAM + swap
+ -s N, --seconds N   repeat printing every N seconds
+ -c N, --count N     repeat printing N times, then exit
+ -w, --wide          wide output
+
+     --help     display this help and exit
+ -V, --version  output version information and exit
+
+
+FREE(1)                                             User Commands                                             FREE(1)
+
+NAME
+       free - Display amount of free and used memory in the system
+
+SYNOPSIS
+       free [options]
+
+DESCRIPTION
+       free displays the total amount of free and used physical and swap memory in the system, as well as the buffers
+       and caches used by the kernel. The information is gathered by parsing  /proc/meminfo.  The  displayed  columns
+       are:
+
+       total  Total installed memory (MemTotal and SwapTotal in /proc/meminfo)
+
+       used   Used memory (calculated as total - free - buffers - cache)
+
+       free   Unused memory (MemFree and SwapFree in /proc/meminfo)
+
+       shared Memory  used  (mostly) by tmpfs (Shmem in /proc/meminfo, available on kernels 2.6.32, displayed as zero
+              if not available)
+
+       buffers
+              Memory used by kernel buffers (Buffers in /proc/meminfo)
+
+       cache  Memory used by the page cache and slabs (Cached and SReclaimable in /proc/meminfo)
+
+       buff/cache
+              Sum of buffers and cache
+
+       available
+              Estimation of how much memory is available for starting new applications, without swapping. Unlike  the
+              data  provided  by the cache or free fields, this field takes into account page cache and also that not
+              all reclaimable memory slabs will be reclaimed due to items being in use  (MemAvailable  in  /proc/mem
+              info, available on kernels 3.14, emulated on kernels 2.6.27+, otherwise the same as free)
+
+28.
+[cs45aa24@mc-redhat01 ~]$ type ls
+ls is aliased to `ls --color=auto'
+[cs45aa24@mc-redhat01 ~]$ type pwd
+pwd is a shell builtin
+[cs45aa24@mc-redhat01 ~]$ type date
+date is hashed (/usr/bin/date)
+
+29.
+[cs45aa24@mc-redhat01 ~]$ df -h
+Filesystem             Size  Used Avail Use% Mounted on
+devtmpfs               2.9G     0  2.9G   0% /dev
+tmpfs                  2.9G     0  2.9G   0% /dev/shm
+tmpfs                  2.9G  306M  2.6G  11% /run
+tmpfs                  2.9G     0  2.9G   0% /sys/fs/cgroup
+/dev/mapper/rhel-root   50G  8.8G   42G  18% /
+/dev/mapper/rhel-home  243G   46M  243G   1% /home
+/dev/sda1             1014M  236M  779M  24% /boot
+tmpfs                  581M   12K  581M   1% /run/user/42
+tmpfs                  581M     0  581M   0% /run/user/1041
+tmpfs                  581M     0  581M   0% /run/user/1024
+tmpfs                  581M     0  581M   0% /run/user/1040
+[cs45aa24@mc-redhat01 ~]$ df -hT
+Filesystem            Type      Size  Used Avail Use% Mounted on
+devtmpfs              devtmpfs  2.9G     0  2.9G   0% /dev
+tmpfs                 tmpfs     2.9G     0  2.9G   0% /dev/shm
+tmpfs                 tmpfs     2.9G  306M  2.6G  11% /run
+tmpfs                 tmpfs     2.9G     0  2.9G   0% /sys/fs/cgroup
+/dev/mapper/rhel-root xfs        50G  8.8G   42G  18% /
+/dev/mapper/rhel-home xfs       243G   46M  243G   1% /home
+/dev/sda1             xfs      1014M  236M  779M  24% /boot
+tmpfs                 tmpfs     581M   12K  581M   1% /run/user/42
+tmpfs                 tmpfs     581M     0  581M   0% /run/user/1041
+tmpfs                 tmpfs     581M     0  581M   0% /run/user/1024
+tmpfs                 tmpfs     581M     0  581M   0% /run/user/1040
+tmpfs                 tmpfs     581M     0  581M   0% /run/user/1005
+
+30.
+[cs45aa24@mc-redhat01 ~]$ du
+0       ./.mozilla/extensions
+0       ./.mozilla/plugins
+0       ./.mozilla
+4       ./.cache/abrt
+4       ./.cache
+0       ./.config/abrt
+0       ./.config
+0       ./homework/week1
+0       ./homework/week3
+0       ./homework/week4
+0       ./homework/week5
+0       ./homework/week6
+0       ./homework/week7
+0       ./homework/week8
+0       ./homework/week9
+0       ./homework/week10
+0       ./homework/week11
+0       ./homework/week12
+0       ./homework/week13
+0       ./homework/week14
+0       ./homework/week15
+4       ./homework/week2
+4       ./homework
+44      .
+[cs45aa24@mc-redhat01 ~]$ du -sh .
+44K     .
+[cs45aa24@mc-redhat01 ~]$ du -sh *
+4.0K    homework
+[cs45aa24@mc-redhat01 ~]$ du -a
+0       ./.mozilla/extensions
+0       ./.mozilla/plugins
+0       ./.mozilla
+4       ./.bash_logout
+4       ./.bash_profile
+4       ./.bashrc
+4       ./.cache/abrt/lastnotification
+4       ./.cache/abrt
+4       ./.cache
+0       ./.config/abrt
+0       ./.config
+8       ./.bash_history
+4       ./.lesshst
+0       ./homework/week1/lab1.txt
+0       ./homework/week1/lecture1.txt
+0       ./homework/week1
+0       ./homework/week3/lab3.txt
+0       ./homework/week3/lecture3.txt
+0       ./homework/week3
+0       ./homework/week4/lab4.txt
+0       ./homework/week4/lecture4.txt
+0       ./homework/week4
+0       ./homework/week5/lab5.txt
+0       ./homework/week5/lecture5.txt
+0       ./homework/week5
+0       ./homework/week6/lab6.txt
+0       ./homework/week6/lecture6.txt
+0       ./homework/week6
+0       ./homework/week7/lab7.txt
+0       ./homework/week7/lecture7.txt
+0       ./homework/week7
+0       ./homework/week8/lab8.txt
+0       ./homework/week8/lecture8.txt
+0       ./homework/week8
+0       ./homework/week9/lab9.txt
+0       ./homework/week9/lecture9.txt
+0       ./homework/week9
+0       ./homework/week10/lab10.txt
+0       ./homework/week10/lecture10.txt
+0       ./homework/week10
+0       ./homework/week11/lab11.txt
+0       ./homework/week11/lecture11.txt
+0       ./homework/week11
+0       ./homework/week12/lab12.txt
+0       ./homework/week12/lecture12.txt
+0       ./homework/week12
+0       ./homework/week13/lab13.txt
+0       ./homework/week13/lecture13.txt
+0       ./homework/week13
+0       ./homework/week14/lab14.txt
+0       ./homework/week14/lecture14.txt
+0       ./homework/week14
+0       ./homework/week15/lab15.txt
+0       ./homework/week15/lecture15.txt
+0       ./homework/week15
+4       ./homework/week2/week-lab-2
+4       ./homework/week2
+4       ./homework
+4       ./.mydatafile
+8       ./.viminfo
+44      .
+[cs45aa24@mc-redhat01 ~]$ du -sh /home
+du: cannot read directory /home/ply: Permission denied
+du: cannot read directory /home/cs45aa01: Permission denied
+du: cannot read directory /home/cs45aa02: Permission denied
+du: cannot read directory /home/cs45aa03: Permission denied
+du: cannot read directory /home/cs45aa04: Permission denied
+du: cannot read directory /home/cs45aa05: Permission denied
+du: cannot read directory /home/cs45aa06: Permission denied
+du: cannot read directory /home/cs45aa07: Permission denied
+du: cannot read directory /home/cs45aa08: Permission denied
+du: cannot read directory /home/cs45aa09: Permission denied
+du: cannot read directory /home/cs45aa10: Permission denied
+du: cannot read directory /home/cs45aa11: Permission denied
+du: cannot read directory /home/cs45aa12: Permission denied
+du: cannot read directory /home/cs45aa13: Permission denied
+du: cannot read directory /home/cs45aa14: Permission denied
+du: cannot read directory /home/cs45aa15: Permission denied
+du: cannot read directory /home/cs45aa16: Permission denied
+du: cannot read directory /home/cs45aa17: Permission denied
+du: cannot read directory /home/cs45aa18: Permission denied
+du: cannot read directory /home/cs45aa19: Permission denied
+du: cannot read directory /home/cs45aa20: Permission denied
+du: cannot read directory /home/cs45aa21: Permission denied
+du: cannot read directory /home/cs45aa22: Permission denied
+du: cannot read directory /home/cs45aa23: Permission denied
+du: cannot read directory /home/cs45aa25: Permission denied
+du: cannot read directory /home/cs45aa26: Permission denied
+du: cannot read directory /home/cs45aa27: Permission denied
+du: cannot read directory /home/cs45aa28: Permission denied
+du: cannot read directory /home/cs45aa29: Permission denied
+du: cannot read directory /home/cs45aa30: Permission denied
+du: cannot read directory /home/cs45aa31: Permission denied
+du: cannot read directory /home/cs45aa32: Permission denied
+du: cannot read directory /home/cs45aa33: Permission denied
+du: cannot read directory /home/cs45aa34: Permission denied
+du: cannot read directory /home/cs45aa35: Permission denied
+du: cannot read directory /home/cs45aa36: Permission denied
+du: cannot read directory /home/cs45aa37: Permission denied
+du: cannot read directory /home/cs45aa38: Permission denied
+du: cannot read directory /home/cs45aa39: Permission denied
+du: cannot read directory /home/cs45aa40: Permission denied
+du: cannot read directory /home/hcampbell: Permission denied
+du: cannot read directory /home/siah: Permission denied
+du: cannot read directory /home/mooks: Permission denied
+du: cannot read directory /home/keith: Permission denied
+du: cannot read directory /home/mr-tester/dirx: Permission denied
+du: cannot read directory /home/mrs-tester: Permission denied
+du: cannot read directory /home/cs45: Permission denied
+2.0M    /home
+[cs45aa24@mc-redhat01 ~]$ du -shS /home
+du: cannot read directory /home/ply: Permission denied
+du: cannot read directory /home/cs45aa01: Permission denied
+du: cannot read directory /home/cs45aa02: Permission denied
+du: cannot read directory /home/cs45aa03: Permission denied
+du: cannot read directory /home/cs45aa04: Permission denied
+du: cannot read directory /home/cs45aa05: Permission denied
+du: cannot read directory /home/cs45aa06: Permission denied
+du: cannot read directory /home/cs45aa07: Permission denied
+du: cannot read directory /home/cs45aa08: Permission denied
+du: cannot read directory /home/cs45aa09: Permission denied
+du: cannot read directory /home/cs45aa10: Permission denied
+du: cannot read directory /home/cs45aa11: Permission denied
+du: cannot read directory /home/cs45aa12: Permission denied
+du: cannot read directory /home/cs45aa13: Permission denied
+du: cannot read directory /home/cs45aa14: Permission denied
+du: cannot read directory /home/cs45aa15: Permission denied
+du: cannot read directory /home/cs45aa16: Permission denied
+du: cannot read directory /home/cs45aa17: Permission denied
+du: cannot read directory /home/cs45aa18: Permission denied
+du: cannot read directory /home/cs45aa19: Permission denied
+du: cannot read directory /home/cs45aa20: Permission denied
+du: cannot read directory /home/cs45aa21: Permission denied
+du: cannot read directory /home/cs45aa22: Permission denied
+du: cannot read directory /home/cs45aa23: Permission denied
+du: cannot read directory /home/cs45aa25: Permission denied
+du: cannot read directory /home/cs45aa26: Permission denied
+du: cannot read directory /home/cs45aa27: Permission denied
+du: cannot read directory /home/cs45aa28: Permission denied
+du: cannot read directory /home/cs45aa29: Permission denied
+du: cannot read directory /home/cs45aa30: Permission denied
+du: cannot read directory /home/cs45aa31: Permission denied
+du: cannot read directory /home/cs45aa32: Permission denied
+du: cannot read directory /home/cs45aa33: Permission denied
+du: cannot read directory /home/cs45aa34: Permission denied
+du: cannot read directory /home/cs45aa35: Permission denied
+du: cannot read directory /home/cs45aa36: Permission denied
+du: cannot read directory /home/cs45aa37: Permission denied
+du: cannot read directory /home/cs45aa38: Permission denied
+du: cannot read directory /home/cs45aa39: Permission denied
+du: cannot read directory /home/cs45aa40: Permission denied
+du: cannot read directory /home/hcampbell: Permission denied
+du: cannot read directory /home/siah: Permission denied
+du: cannot read directory /home/mooks: Permission denied
+du: cannot read directory /home/keith: Permission denied
+du: cannot read directory /home/mr-tester/dirx: Permission denied
+du: cannot read directory /home/mrs-tester: Permission denied
+du: cannot read directory /home/cs45: Permission denied
+4.0K    /home
+

@@ -1,0 +1,66 @@
+1.
+$ cp -r /tmp/week-5/* ~/homework/week-5/
+
+2.
+$ sort -n numbers
+
+3.
+$ sort --output=monbrs numbers months
+
+4.
+$ grep '^r' /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+rpc:x:32:32:Rpcbind Daemon:/var/lib/rpcbind:/sbin/nologin
+rtkit:x:172:172:RealtimeKit:/proc:/sbin/nologin
+radvd:x:75:75:radvd user:/:/sbin/nologin
+rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
+
+5.
+$ grep -ic '^r' /etc/passwd
+5
+
+6.
+$ grep -vi 'cs45' /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+bin:x:1:1:bin:/bin:/sbin/nologin
+daemon:x:2:2:daemon:/sbin:/sbin/nologin
+adm:x:3:4:adm:/var/adm:/sbin/nologin
+lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+...
+
+7.
+$ grep -i 'y$' months
+May
+
+8.
+$ grep -i -e 'root' -e 'ly' -e 'body' /etc/passwd
+
+9.
+$ cat -t regtxt
+
+10.
+$ egrep [0-9]{3}.[0-9]{3}.[0-9]{4} regtxt
+408-334-9808
+
+11.
+aaaaaAA
+
+12.
+$ egrep [0-9]{3}-[0-9]{2}-[0-9]{4} regtxt2 | sed 's/[0-9][0-9][0-9][0-9]$/****/'
+446-35-****
+346-35-****
+
+13.
+$ sed -e 's/\(100\)/(\1)/' regtxt
+
+14.
+$ egrep [0-9]{3}.[0-9]{3}.[0-9]{4} regtxt2
+408-334-9808
+415-934-6808
+510-534-9808
+
+15.
+$ sed 's/^\([0-9][0-9][0-9]\)\([-][0-9][0-9][0-9][-]\)\([0-9][0-9][0-9][0-9]\)$/\3\2\1/' regtxt2
+9808-334-408
+6808-934-415
+9808-534-510

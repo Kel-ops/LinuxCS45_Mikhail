@@ -1,0 +1,18 @@
+#!/bin/bash
+#Testing exit status
+
+
+read -p "Enter your name: " NAME
+
+if [[ "$NAME" == [mM][iI][kK][eE] ]]
+then
+echo "Searching records"
+	if  who | grep "cs45aa24" 
+	then
+	echo "You are in luck, $NAME is online"
+	fi
+else
+echo "Nobody registered by that name"
+fi
+
+

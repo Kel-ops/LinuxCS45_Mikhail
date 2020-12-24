@@ -1,0 +1,28 @@
+#!/bin/bash
+# Scriptname: sayhello 
+
+echo "First for loop without quotes around \$*"
+for name in $*    #or  for name in $@
+ do
+    echo Hi $name 
+ done
+
+echo "second for loop with quotes around \$*"
+for name in "$*"    #or  for name in $@
+ do
+    echo Hi $name 
+ done
+
+
+echo "Third loop with \$@ and quotes "
+
+for name in "$@"
+ do
+  echo "$name"
+ done
+
+echo "fourth loop with \$@ and no quotes "
+for name in $@
+ do
+  echo "$name"
+ done

@@ -1,0 +1,204 @@
+# Mikhail Ball
+# Week 3 Lab
+# CIS045
+
+
+1.
+[cs45aa24@mc-redhat01 ~]$ umask
+0002
+
+2.
+0002
+
+
+3.
+-bash-4.2$ cd homework/week-3/lec-3/
+-bash-4.2$ pwd
+/home/cs45aa24/homework/week-3/lec-3
+
+4.
+-bash-4.2$ mkdir dirx
+-bash-4.2$ ls -ld dirx
+drwxrwxr-x. 2 cs45aa24 cs45aa24 6 Sep 25 00:35 dirx
+
+5.
+-bash-4.2$ touch filex
+-bash-4.2$ ls -l filex
+-rw-rw-r--. 1 cs45aa24 cs45aa24 0 Sep 25 00:36 filex
+
+- cs45aa24 owns the file
+- 6 bytes
+- -rw-rw-r--.
+- read and write
+- read and write
+- read only
+
+6.
+-bash-4.2$ umask 033
+
+7.
+-bash-4.2$ touch zfile
+-bash-4.2$ ls -l zfile
+-rw-r--r--. 1 cs45aa24 cs45aa24 0 Sep 25 00:40 zfile
+
+- -rw-r--r--.
+- We changed the umask to say restrict no permission from owner (0), restrict
+read and write permissions from the group (3 = 2 write + 1 execute), restrict
+read and write permissions from global (3 = 2 write + 1 execute)
+
+By default files do not get the execute
+
+8.
+-bash-4.2$ mkdir zdir
+-bash-4.2$ ls -ld zdir
+drwxr--r--. 2 cs45aa24 cs45aa24 6 Sep 25 00:43 zdir
+
+- drwxr--r--.
+-  We changed the umask to say restrict no permission from owner (0), restrict
+read and write permissions from the group (3 = 2 write + 1 execute), restrict
+read and write permissions from global (3 = 2 write + 1 execute)
+
+- 'x' This allows you to open the folder (execute) or execute a file/program/script
+- 'w' This allows you to write, modify, delete
+- 'r' This allows you to read the files but not modify. You can however copy the file then modify the copy.
+
+
+9.
+-bash-4.2$ groups mr-tester
+mr-tester : mr-tester
+
+-bash-4.2$ grep mr-tester /etc/group
+mr-tester:x:1047:
+
+-bash-4.2$ id -a mr-tester
+uid=1045(mr-tester) gid=1047(mr-tester) groups=1047(mr-tester)
+
+
+10.
+If the optional - flag is given, the user's environment will be reinitialized as though the user had logged in, otherwise the current environment, including current working directory, remains unchanged.
+
+11.
+-bash-4.2$ touch gxfile
+-bash-4.2$ ls -l gxfile
+-rw-r--r--. 1 cs45aa24 cs45aa24 0 Sep 25 01:11 gxfile
+
+-bash-4.2$ chgrp wheel gxfile
+chgrp: changing group of gxfile: Operation not permitted
+
+12.
+-bash-4.2$ touch mr-file
+-bash-4.2$ ls -l mr-file
+-rw-r--r--. 1 cs45aa24 cs45aa24 0 Sep 25 01:13 mr-file
+
+-bash-4.2$ chgrp cs45 mr-file
+chgrp: changing group of mr-file: Operation not permitted
+
+13.
+-bash-4.2$ test -f mr-file
+-bash-4.2$ echo $?
+0
+
+-bash-4.2$ mkdir mr-dir
+-bash-4.2$ ls -ld mr-dir
+drwxr--r--. 2 cs45aa24 cs45aa24 6 Sep 25 01:16 mr-dir
+-bash-4.2$ test -d mr-dir
+-bash-4.2$ echo $0
+-bash
+-bash-4.2$ echo $?
+0
+-bash-4.2$
+
+14.
+-bash-4.2$ test 4 -lt 5
+-bash-4.2$ echo $?
+0
+
+-bash-4.2$ test 4 -lt 5 && echo "I got this"
+I got this
+
+-bash-4.2$ test 2 -ne 3 && echo "Rock on"
+Rock on
+
+-bash-4.2$ test -d mr-dir && echo "mr-dir is a directory"
+mr-dir is a directory
+
+15.
+-bash-4.2$ mkdir permtest
+-bash-4.2$ cd permtest/
+-bash-4.2$ touch feedback{1..3}
+-bash-4.2$ ls
+feedback1  feedback2  feedback3
+-bash-4.2$ ls -lh
+total 0
+-rw-r--r--. 1 cs45aa24 cs45aa24 0 Sep 25 01:24 feedback1
+-rw-r--r--. 1 cs45aa24 cs45aa24 0 Sep 25 01:24 feedback2
+-rw-r--r--. 1 cs45aa24 cs45aa24 0 Sep 25 01:24 feedback3
+
+16.
+-bash-4.2$ vim feedback1
+
+17.
+-bash-4.2$ chmod +x feedback1
+-bash-4.2$ ls -lh
+total 4.0K
+-rwxr--r--. 1 cs45aa24 cs45aa24 44 Sep 25 01:30 feedback1
+-rw-r--r--. 1 cs45aa24 cs45aa24  0 Sep 25 01:24 feedback2
+-rw-r--r--. 1 cs45aa24 cs45aa24  0 Sep 25 01:24 feedback3
+
+
+18.
+-bash-4.2$ chmod o-r feedback2
+-bash-4.2$ ls -lh
+total 4.0K
+-rwxr--r--. 1 cs45aa24 cs45aa24 44 Sep 25 01:30 feedback1
+-rw-r-----. 1 cs45aa24 cs45aa24  0 Sep 25 01:24 feedback2
+-rw-r--r--. 1 cs45aa24 cs45aa24  0 Sep 25 01:24 feedback3
+
+19.
+-rwxr--r--. 1 cs45aa24 cs45aa24 44 Sep 25 01:30 feedback1
+-rw-r-----. 1 cs45aa24 cs45aa24  0 Sep 25 01:24 feedback2
+-rw-r--r--. 1 cs45aa24 cs45aa24  0 Sep 25 01:24 feedback3
+
+20.
+-bash-4.2$ chmod 754 feedback3
+-bash-4.2$ ls -lh
+total 4.0K
+-rwxr--r--. 1 cs45aa24 cs45aa24 44 Sep 25 01:30 feedback1
+-rw-r-----. 1 cs45aa24 cs45aa24  0 Sep 25 01:24 feedback2
+-rwxr-xr--. 1 cs45aa24 cs45aa24  0 Sep 25 01:24 feedback3
+
+21.
+-bash-4.2$ mkdir dir-tester
+
+22.
+-bash-4.2$ mkdir dir-tester/dir-test2
+
+23.
+-bash-4.2$ touch dir-tester/dir-test2/tester-file{1..4}
+-bash-4.2$ ls dir-tester/dir-test2/
+tester-file1  tester-file2  tester-file3  tester-file4
+
+24.
+-bash-4.2$ ls -lR dir-tester/
+dir-tester/:
+total 0
+drwxr--r--. 2 cs45aa24 cs45aa24 86 Sep 25 01:46 dir-test2
+
+dir-tester/dir-test2:
+total 0
+-rw-r--r--. 1 cs45aa24 cs45aa24 0 Sep 25 01:46 tester-file1
+-rw-r--r--. 1 cs45aa24 cs45aa24 0 Sep 25 01:46 tester-file2
+-rw-r--r--. 1 cs45aa24 cs45aa24 0 Sep 25 01:46 tester-file3
+-rw-r--r--. 1 cs45aa24 cs45aa24 0 Sep 25 01:46 tester-file4
+
+25.
+-bash-4.2$ ls dir-tester/
+ls: cannot access dir-tester/dir-test2: Permission denied
+dir-test2
+-bash-4.2$ ls -lr
+total 4
+-rwxr-xr--. 1 cs45aa24 cs45aa24  0 Sep 25 01:24 feedback3
+-rw-r-----. 1 cs45aa24 cs45aa24  0 Sep 25 01:24 feedback2
+-rwxr--r--. 1 cs45aa24 cs45aa24 44 Sep 25 01:30 feedback1
+drw-------. 3 cs45aa24 cs45aa24 23 Sep 25 01:45 dir-tester
+

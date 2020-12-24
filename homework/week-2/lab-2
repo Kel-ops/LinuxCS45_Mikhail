@@ -1,0 +1,861 @@
+Mikhail Ball
+LAB-02
+CIS45
+
+
+1.
+[cs45aa24@mc-redhat01 ~]$ cd /; ls -F;
+bin@   dev/  home/  lib64@  mnt/  proc/  run/   srv/  tmp/  var/
+boot/  etc/  lib@   media/  opt/  root/  sbin@  sys/  usr/
+[cs45aa24@mc-redhat01 /]$ cd /etc; ls -F
+abrt/                       enscript.cfg    krb5.conf                 passwd            shadow-
+adjtime                     environment     krb5.conf.d/              passwd-           shells
+aliases                     ethertypes      ksmtuned.conf             pbm2ppa.conf      skel/
+aliases.db                  exports         ld.so.cache               pcp/              slp.conf
+alsa/                       exports.d/      ld.so.conf                pcp.conf          slp.reg
+alternatives/               favicon.png@    ld.so.conf.d/             pcp.env           slp.reg.d/
+amanda/                     fcoe/           libaudit.conf             Pegasus/          slp.spi
+anacrontab                  festival/       libblockdev/              pinforc           smartmontools/
+asound.conf                 filesystems     libibverbs.d/             pkcs11/           snmp/
+at.deny                     firefox/        libnl/                    pki/              softhsm2.conf
+audisp/                     firewalld/      libpaper.d/               plymouth/         sos.conf
+audit/                      flatpak/        libreport/                pm/               sound/
+autofs.conf                 fonts/          libuser.conf              pnm2ppa.conf      speech-dispatcher/
+autofs_ldap_auth.conf       fprintd.conf    libvirt/                  polkit-1/         ssh/
+auto.master                 fstab           locale.conf               popt.d/           ssl/
+auto.master.d/              fuse.conf       localtime@                postfix/          sssd/
+auto.misc                   fwupd/          login.defs                ppp/              statetab
+auto.net*                   gconf/          logrotate.conf            prelink.conf.d/   statetab.d/
+auto.smb*                   gcrypt/         logrotate.d/              printcap          subgid
+avahi/                      gdbinit         lsm/                      profile           subgid-
+bash_completion.d/          gdbinit.d/      lvm/                      profile.d/        subuid
+bashrc                      gdm/            machine-id                protocols         subuid-
+binfmt.d/                   geoclue/        machine-info              pulse/            subversion/
+bluetooth/                  GeoIP.conf      magic                     purple/           sudo.conf
+bonobo-activation/          ghostscript/    mailcap                   python/           sudoers
+brltty/                     glvnd/          mail.rc                   qemu-ga/          sudoers.d/
+brltty.conf                 gnome-vfs-2.0/  makedumpfile.conf.sample  qemu-kvm/         sudo-ldap.conf
+certmonger/                 gnupg/          man_db.conf               radvd.conf        sysconfig/
+chkconfig.d/                GREP_COLORS     maven/                    ras/              sysctl.conf
+chrony.conf                 groff/          mcelog/                   rc0.d@            sysctl.d/
+chrony.keys                 group           mime.types                rc1.d@            systemd/
+cifs-utils/                 group-          mke2fs.conf               rc2.d@            system-release@
+cockpit/                    grub2.cfg@      modprobe.d/               rc3.d@            system-release-cpe
+cron.d/                     grub.d/         modules-load.d/           rc4.d@            target/
+cron.daily/                 gshadow         motd                      rc5.d@            tcsd.conf
+cron.deny                   gshadow-        motd.d/                   rc6.d@            terminfo/
+cron.hourly/                gss/            mtab@                     rc.d/             tmpfiles.d/
+cron.monthly/               gssproxy/       mtools.conf               rc.local@         tomcat/
+crontab                     host.conf       multipath/                rdma/             trusted-key.key
+cron.weekly/                hostname        my.cnf                    redhat-release    tuned/
+crypttab                    hosts           my.cnf.d/                 request-key.conf  udev/
+csh.cshrc                   hosts.allow     nanorc                    request-key.d/    udisks2/
+csh.login                   hosts.deny      ndctl/                    resolv.conf       unbound/
+cups/                       hp/             netconfig                 rhsm/             updatedb.conf
+cupshelpers/                httpd/          NetworkManager/           rpc               UPower/
+custodia/                   idmapd.conf     networks                  rpm/              usb_modeswitch.conf
+dbus-1/                     ImageMagick-6/  nfs.conf                  rsyncd.conf       vconsole.conf
+dconf/                      init.d@         nfsmount.conf             rsyslog.conf      vimrc
+default/                    inittab         nsswitch.conf             rsyslog.d/        virc
+depmod.d/                   inputrc         nsswitch.conf.bak         rwtab             vmware-tools/
+dhcp/                       ipa/            ntp/                      rwtab.d/          wgetrc
+DIR_COLORS                  iproute2/       ntp.conf                  samba/            wpa_supplicant/
+DIR_COLORS.256color         ipsec.conf      numad.conf                sane.d/           wvdial.conf
+DIR_COLORS.lightbgcolor     ipsec.d/        oddjob/                   sasl2/            X11/
+dirsrv/                     ipsec.secrets   oddjobd.conf              scl/              xdg/
+dleyna-server-service.conf  iscsi/          oddjobd.conf.d/           securetty         xinetd.d/
+dnf/                        issue           openldap/                 security/         xml/
+dnsmasq.conf                issue.d/        openlmi/                  selinux/          yum/
+dnsmasq.d/                  issue.net       openwsman/                services          yum.conf
+docker/                     java/           opt/                      sestatus.conf     yum.repos.d/
+dracut.conf                 jvm/            os-release                setroubleshoot/
+dracut.conf.d/              jvm-commmon/    PackageKit/               setuptool.d/
+e2fsck.conf                 kdump.conf      pam.d/                    sgml/
+egl/                        kernel/         papersize                 shadow
+
+2.
+[cs45aa24@mc-redhat01 etc]$ ls -F | more
+abrt/
+adjtime
+aliases
+aliases.db
+alsa/
+alternatives/
+amanda/
+anacrontab
+asound.conf
+at.deny
+audisp/
+audit/
+autofs.conf
+autofs_ldap_auth.conf
+auto.master
+auto.master.d/
+auto.misc
+auto.net*
+auto.smb*
+avahi/
+bash_completion.d/
+bashrc
+binfmt.d/
+bluetooth/
+bonobo-activation/
+brltty/
+brltty.conf
+certmonger/
+chkconfig.d/
+chrony.conf
+chrony.keys
+cifs-utils/
+cockpit/
+cron.d/
+cron.daily/
+cron.deny
+cron.hourly/
+cron.monthly/
+crontab
+cron.weekly/
+crypttab
+csh.cshrc
+csh.login
+cups/
+cupshelpers/
+custodia/
+dbus-1/
+dconf/
+default/
+--More--
+
+3.
+[cs45aa24@mc-redhat01 etc]$ cd /var/log; ls -a
+.                  cron-20200920       lastlog              pcp              speech-dispatcher       vmware-vmsvc.log
+..                 cups                libvirt              pki              spooler                 wpa_supplicant.log
+amanda             custodia            maillog              pluto            spooler-20200906        wtmp
+anaconda           dirsrv              maillog-20200906     ppp              spooler-20200913        Xorg.0.log
+audit              dmesg               maillog-20200913     qemu-ga          spooler-20200920        Xorg.0.log.old
+boot.log           dmesg.old           maillog-20200920     rhsm             sssd                    Xorg.9.log
+boot.log-20200905  firewalld           messages             sa               swtpm                   yum.log
+btmp               gdm                 messages-20200906    samba            tallylog
+chrony             glusterfs           messages-20200913    secure           tomcat
+cron               grubby              messages-20200920    secure-20200906  tuned
+cron-20200906      grubby_prune_debug  ntpstats             secure-20200913  vmware-network.log
+cron-20200913      httpd               openlmi-install.log  secure-20200920  vmware-vgauthsvc.log.0
+
+4.
+[cs45aa24@mc-redhat01 log]$ ls -al
+total 280120
+drwxr-xr-x. 27 root         root        4096 Sep 20 03:50 .
+drwxr-xr-x. 23 root         root        4096 Sep  3 23:10 ..
+drwx--S---.  2 amandabackup disk           6 Jun 19  2018 amanda
+drwxr-xr-x.  2 root         root         232 Sep  3 22:34 anaconda
+drwx------.  2 root         root          99 Sep 22 21:32 audit
+-rw-------.  1 root         root           0 Sep  5 03:12 boot.log
+-rw-------.  1 root         root       95558 Sep  5 03:12 boot.log-20200905
+-rw-------.  1 root         utmp   124149888 Sep 23 00:43 btmp
+drwxr-xr-x.  2 chrony       chrony         6 Jan 10  2019 chrony
+-rw-------.  1 root         root       64463 Sep 23 00:40 cron
+-rw-------.  1 root         root       48913 Sep  6 03:38 cron-20200906
+-rw-------.  1 root         root      158261 Sep 13 03:21 cron-20200913
+-rw-------.  1 root         root      158508 Sep 20 03:50 cron-20200920
+drwxr-xr-x.  2 lp           sys           84 Sep  6 03:38 cups
+drwx------.  2 root         root           6 Jun 21  2017 custodia
+drwxr-xr-x.  2 root         root           6 Jun 15 10:06 dirsrv
+-rw-r--r--.  1 root         root      105292 Sep  3 23:53 dmesg
+-rw-r--r--.  1 root         root      104770 Sep  3 23:50 dmesg.old
+-rw-r-----.  1 root         root         186 Sep  3 23:53 firewalld
+drwx--x--x.  2 root         gdm          122 Sep  4 03:44 gdm
+drwxr-xr-x.  2 root         root           6 Jan 23  2020 glusterfs
+-rw-------.  1 root         root        1360 Sep  3 23:51 grubby
+-rw-r--r--.  1 root         root         193 Sep  3 22:27 grubby_prune_debug
+drwx------.  2 root         root           6 Oct  8  2019 httpd
+-rw-r--r--.  1 root         root      306016 Sep 23 00:40 lastlog
+drwx------.  3 root         root          18 Mar 23  2020 libvirt
+-rw-------.  1 root         root        1233 Sep 20 16:03 maillog
+-rw-------.  1 root         root        3412 Sep  5 14:09 maillog-20200906
+-rw-------.  1 root         root        8013 Sep 12 15:39 maillog-20200913
+-rw-------.  1 root         root        7568 Sep 19 15:07 maillog-20200920
+-rw-------.  1 root         root      127653 Sep 23 00:40 messages
+-rw-------.  1 root         root      518233 Sep  6 03:38 messages-20200906
+-rw-------.  1 root         root      362439 Sep 13 03:20 messages-20200913
+-rw-------.  1 root         root      336317 Sep 20 03:50 messages-20200920
+drwxr-xr-x.  2 ntp          ntp            6 Jun  1 07:18 ntpstats
+-rw-r--r--.  1 root         root       25848 Sep  3 22:30 openlmi-install.log
+drwxrwxr-x.  6 pcp          pcp           61 Sep  3 23:51 pcp
+drwxr-xr-x.  2 root         root          44 Sep  3 22:28 pki
+drwxr-xr-x.  3 root         root          18 Sep  3 22:28 pluto
+drwx------.  2 root         root           6 Feb 25  2020 ppp
+drwxr-xr-x.  2 root         root           6 Dec 12  2018 qemu-ga
+drwxr-xr-x.  2 root         root         208 Sep 20 03:50 rhsm
+drwxr-xr-x.  2 root         root        4096 Sep 23 00:00 sa
+drwx------.  3 root         root          17 Apr  1 03:15 samba
+-rw-------.  1 root         root    24031012 Sep 23 00:43 secure
+-rw-------.  1 root         root    14396729 Sep  6 03:37 secure-20200906
+-rw-------.  1 root         root    55232569 Sep 13 03:20 secure-20200913
+-rw-------.  1 root         root    61717068 Sep 20 03:50 secure-20200920
+drwx------.  2 root         root           6 Jan 27  2014 speech-dispatcher
+-rw-------.  1 root         root           0 Sep 20 03:50 spooler
+-rw-------.  1 root         root           0 Sep  3 22:30 spooler-20200906
+-rw-------.  1 root         root           0 Sep  6 03:38 spooler-20200913
+-rw-------.  1 root         root           0 Sep 13 03:21 spooler-20200920
+drwxr-x---.  2 sssd         sssd          47 Sep  6 03:38 sssd
+drwxr-xr-x.  3 root         root          21 Sep  3 22:29 swtpm
+-rw-------.  1 root         root       67072 Sep 19 01:58 tallylog
+drwxrwx---.  2 tomcat       root         122 Sep 20 03:50 tomcat
+drwxr-xr-x.  2 root         root          23 Sep  3 23:10 tuned
+-rw-------.  1 root         root        4606 Sep  3 23:10 vmware-network.log
+-rw-------.  1 root         root        3064 Sep  3 23:53 vmware-vgauthsvc.log.0
+-rw-------.  1 root         root        4047 Sep  4 03:53 vmware-vmsvc.log
+-rw-r--r--.  1 root         root          80 Sep  3 23:54 wpa_supplicant.log
+-rw-rw-r--.  1 root         utmp      294528 Sep 23 00:40 wtmp
+-rw-r--r--.  1 root         root       27573 Sep  4 03:44 Xorg.0.log
+-rw-r--r--.  1 root         root       46310 Sep  4 03:44 Xorg.0.log.old
+-rw-r--r--.  1 root         root       19698 Sep  3 23:22 Xorg.9.log
+-rw-------.  1 root         root       12465 Sep 20 16:04 yum.log
+[cs45aa24@mc-redhat01 log]$ ls -al | more
+total 280120
+drwxr-xr-x. 27 root         root        4096 Sep 20 03:50 .
+drwxr-xr-x. 23 root         root        4096 Sep  3 23:10 ..
+drwx--S---.  2 amandabackup disk           6 Jun 19  2018 amanda
+drwxr-xr-x.  2 root         root         232 Sep  3 22:34 anaconda
+drwx------.  2 root         root          99 Sep 22 21:32 audit
+-rw-------.  1 root         root           0 Sep  5 03:12 boot.log
+-rw-------.  1 root         root       95558 Sep  5 03:12 boot.log-20200905
+-rw-------.  1 root         utmp   124151040 Sep 23 00:44 btmp
+drwxr-xr-x.  2 chrony       chrony         6 Jan 10  2019 chrony
+-rw-------.  1 root         root       64463 Sep 23 00:40 cron
+-rw-------.  1 root         root       48913 Sep  6 03:38 cron-20200906
+-rw-------.  1 root         root      158261 Sep 13 03:21 cron-20200913
+-rw-------.  1 root         root      158508 Sep 20 03:50 cron-20200920
+drwxr-xr-x.  2 lp           sys           84 Sep  6 03:38 cups
+drwx------.  2 root         root           6 Jun 21  2017 custodia
+drwxr-xr-x.  2 root         root           6 Jun 15 10:06 dirsrv
+-rw-r--r--.  1 root         root      105292 Sep  3 23:53 dmesg
+-rw-r--r--.  1 root         root      104770 Sep  3 23:50 dmesg.old
+-rw-r-----.  1 root         root         186 Sep  3 23:53 firewalld
+drwx--x--x.  2 root         gdm          122 Sep  4 03:44 gdm
+drwxr-xr-x.  2 root         root           6 Jan 23  2020 glusterfs
+-rw-------.  1 root         root        1360 Sep  3 23:51 grubby
+-rw-r--r--.  1 root         root         193 Sep  3 22:27 grubby_prune_debug
+drwx------.  2 root         root           6 Oct  8  2019 httpd
+-rw-r--r--.  1 root         root      306016 Sep 23 00:40 lastlog
+drwx------.  3 root         root          18 Mar 23  2020 libvirt
+-rw-------.  1 root         root        1233 Sep 20 16:03 maillog
+-rw-------.  1 root         root        3412 Sep  5 14:09 maillog-20200906
+-rw-------.  1 root         root        8013 Sep 12 15:39 maillog-20200913
+-rw-------.  1 root         root        7568 Sep 19 15:07 maillog-20200920
+-rw-------.  1 root         root      127653 Sep 23 00:40 messages
+-rw-------.  1 root         root      518233 Sep  6 03:38 messages-20200906
+-rw-------.  1 root         root      362439 Sep 13 03:20 messages-20200913
+-rw-------.  1 root         root      336317 Sep 20 03:50 messages-20200920
+drwxr-xr-x.  2 ntp          ntp            6 Jun  1 07:18 ntpstats
+-rw-r--r--.  1 root         root       25848 Sep  3 22:30 openlmi-install.log
+drwxrwxr-x.  6 pcp          pcp           61 Sep  3 23:51 pcp
+drwxr-xr-x.  2 root         root          44 Sep  3 22:28 pki
+drwxr-xr-x.  3 root         root          18 Sep  3 22:28 pluto
+drwx------.  2 root         root           6 Feb 25  2020 ppp
+drwxr-xr-x.  2 root         root           6 Dec 12  2018 qemu-ga
+drwxr-xr-x.  2 root         root         208 Sep 20 03:50 rhsm
+drwxr-xr-x.  2 root         root        4096 Sep 23 00:00 sa
+drwx------.  3 root         root          17 Apr  1 03:15 samba
+-rw-------.  1 root         root    24032430 Sep 23 00:44 secure
+-rw-------.  1 root         root    14396729 Sep  6 03:37 secure-20200906
+-rw-------.  1 root         root    55232569 Sep 13 03:20 secure-20200913
+-rw-------.  1 root         root    61717068 Sep 20 03:50 secure-20200920
+--More--
+
+5.
+[cs45aa24@mc-redhat01 log]$ ls /usr/sbin
+abrt-auto-reporting          exportfs                   lvm                         rpc.rquotad
+abrt-configuration           faillock                   lvmconf                     rpc.statd
+abrtd                        fatlabel                   lvmconfig                   rsyslogd
+abrt-dbus                    fcgistarter                lvmdiskscan                 rtacct
+abrt-harvest-pstoreoops      fcnsq                      lvmdump                     rtcwake
+abrt-harvest-vmcore          fcoeadm                    lvmetad                     rtkitctl
+abrt-install-ccpp-hook       fcoemon                    lvmpolld                    rtmon
+abrt-server                  fcping                     lvmsadc                     rtpr
+accept                       fcrls                      lvmsar                      rtstat
+accessdb                     fdformat                   lvreduce                    runlevel
+accton                       fdisk                      lvremove                    runuser
+activate-devpay              filefrag                   lvrename                    sa
+addgnupghome                 findfs                     lvresize                    safe_finger
+addpart                      fipvlan                    lvs                         saned
+adduser                      firewalld                  lvscan                      saslauthd
+agetty                       firstboot                  makedumpfile                sasldblistusers2
+alsabat-test.sh              fixfiles                   matchpathcon                saslpasswd2
+alsactl                      fixparts                   mcelog                      saveconfig
+alsa-info                    fixup-linkedattrs.pl       mdadm                       schema-reload.pl
+alsa-info.sh                 fixup-memberof.pl          mdmon                       scsieject
+alternatives                 fsadm                      migrate-ds.pl               scsitape
+amaddclient                  fsck                       mii-diag                    sedispatch
+amadmin                      fsck.btrfs                 mii-tool                    sefcontext_compile
+amaespipe                    fsck.cramfs                mkdict                      selabel_digest
+amandad                      fsck.ext2                  mkdosfs                     selabel_lookup
+amarchiver                   fsck.ext3                  mkdumprd                    selabel_lookup_best_match
+amcheck                      fsck.ext4                  mke2fs                      selabel_partial_match
+amcheckdb                    fsck.fat                   mkfs                        selinuxconlist
+amcheckdump                  fsck.minix                 mkfs.btrfs                  selinuxdefcon
+amcleanup                    fsck.msdos                 mkfs.cramfs                 selinuxenabled
+amcleanupdisk                fsck.vfat                  mkfs.ext2                   selinuxexeccon
+amcrypt                      fsck.xfs                   mkfs.ext3                   selinux_restorecon
+amcrypt-ossl                 fsfreeze                   mkfs.ext4                   semanage
+amcrypt-ossl-asym            fstrim                     mkfs.fat                    semodule
+amcryptsimple                fuser                      mkfs.minix                  sendmail
+amdevcheck                   fxload                     mkfs.msdos                  sendmail.postfix
+amdump                       gdisk                      mkfs.vfat                   service
+amfetchdump                  gdm                        mkfs.xfs                    sestatus
+amflush                      gencert                    mkhomedir_helper            setcap
+amgetconf                    genhomedircon              mklost+found                setenforce
+amgpgcrypt                   genhostid                  mkswap                      setfiles
+amlabel                      genl                       ModemManager                setpci
+amoverview                   genl-ctrl-list             modinfo                     setquota
+amplot                       getcap                     modprobe                    setregdomain
+amreport                     getenforce                 monitor                     setroubleshootd
+amrestore                    getpcaps                   mount.cifs                  setsebool
+amrmtape                     getsebool                  mount.fuse                  setup
+amserverconfig               glibc_post_upgrade.x86_64  mount.nfs                   setup-ds.pl
+amservice                    gluster                    mount.nfs4                  sfdisk
+amstatus                     groupadd                   mountstats                  sgdisk
+amtape                       groupdel                   mpathconf                   sgpio
+amtapetype                   groupmems                  mpathpersist                showmount
+amtoc                        groupmod                   mtr                         shutdown
+amvault                      grpck                      mtx                         skdump
+anaconda                     grpconv                    multipath                   sktest
+anacron                      grpunconv                  multipathd                  slattach
+apachectl                    grub2-bios-setup           nameif                      sln
+applygnupgdefaults           grub2-get-kernel-settings  netreport                   slpd
+arp                          grub2-install              netscsid                    smartctl
+arpd                         grub2-macbless             NetworkManager              smartd
+arping                       grub2-mkconfig             new-kernel-pkg              smbd
+atd                          grub2-ofpathname           newusers                    sm-notify
+atrun                        grub2-probe                nfsdcltrack                 smtp-sink
+audispd                      grub2-reboot               nfsidmap                    smtp-source
+auditctl                     grub2-rpm-sort             nfsiostat                   snmpd
+auditd                       grub2-set-default          nfsstat                     snmptrapd
+augenrules                   grub2-setpassword          nisserver-plugin-defs       sosreport
+aureport                     grub2-sparc64-setup        nl-class-add                spacewalk-channel
+ausearch                     grubby                     nl-class-delete             spice-vdagentd
+authconfig                   gssproxy                   nl-classid-lookup           ss
+authconfig-tui               halt                       nl-class-list               sserver
+automount                    handle-sshpw               nl-cls-add                  sshd
+autrace                      hardlink                   nl-cls-delete               sshd-keygen
+avahi-daemon                 htcacheclean               nl-cls-list                 sss_cache
+avcstat                      httpd                      nl-link-list                sssd
+badblocks                    hwclock                    nl-pktloc-lookup            start-dirsrv
+bak2db                       hwloc-dump-hwdata          nl-qdisc-add                start-statd
+bak2db.pl                    hypervfcopyd               nl-qdisc-delete             status-dirsrv
+biosdecode                   hypervkvpd                 nl-qdisc-list               stinit
+biosdevname                  hypervvssd                 nmbd                        stop-dirsrv
+blkdeactivate                iconvconfig                nologin                     subscription-manager
+blkdiscard                   iconvconfig.x86_64         ns-accountstatus.pl         subscription-manager-gui
+blkid                        ifcfg                      ns-activate.pl              suexec
+blkmapd                      ifconfig                   ns-inactivate.pl            suffix2instance
+blockdev                     ifdown                     ns-newpwpolicy.pl           sulogin
+bonobo-activation-sysconf    ifenslave                  ns-slapd                    sushell
+bpftool                      ifstat                     nss_pcache                  swaplabel
+brctl                        ifup                       nstat                       swapoff
+bridge                       init                       ntpd                        swapon
+btrfs                        insmod                     ntpdate                     switch_root
+btrfsck                      install-info               ntpdc                       syntax-validate.pl
+btrfs-convert                installkernel              ntp-keygen                  sysctl
+btrfs-debug-tree             intel-microcode2ucode      ntpq                        syspurpose
+btrfs-find-root              iotop                      ntptime                     sys-unconfig
+btrfs-image                  ip                         ntsysv                      tapeinfo
+btrfs-map-logical            ip6tables                  oddjobd                     tc
+btrfs-select-super           ip6tables-restore          osd_login                   tcpd
+btrfstune                    ip6tables-save             ownership                   tcpdmatch
+btrfs-zero-log               ipa-advise                 packer                      tcpdump
+build-locale-archive         ipa-backup                 pam_console_apply           tcpslice
+cacertdir_rehash             ipa-cacert-manage          pam_tally2                  tcsd
+cache_check                  ipa-ca-install             pam_timestamp_check         telinit
+cache_dump                   ipa-cert-fix               paperconfig                 testsaslauthd
+cache_metadata_size          ipa-certupdate             parted                      thin_check
+cache_repair                 ipa-client-automount       partprobe                   thin_delta
+cache_restore                ipa-client-install         partx                       thin_dump
+cache_writeback              ipa-compat-manage          pdata_tools                 thin_ls
+capsh                        ipa-crlgen-manage          pethtool                    thin_metadata_size
+cbq                          ipa-csreplica-manage       pidof                       thin_repair
+certmonger                   ipactl                     pifconfig                   thin_restore
+cfdisk                       ipa-getkeytab              ping6                       thin_rmap
+cgdisk                       ipa-join                   pivot_root                  thin_trim
+chat                         ipa-kra-install            pkidestroy                  tickadj
+chcpu                        ipa-ldap-updater           pki-server                  tomcat
+chgpasswd                    ipa-managed-entries        pki-server-nuxwdog          tracepath
+chkconfig                    ipa-nis-manage             pki-server-upgrade          tracepath6
+chpasswd                     ipa-otptoken-import        pkispawn                    try-from
+chronyd                      ipa-pkinit-manage          pki-upgrade                 tune2fs
+chroot                       ipa-replica-conncheck      plipconfig                  tuned
+cifs.idmap                   ipa-replica-install        pluginviewer                tuned-adm
+cifs.upcall                  ipa-replica-manage         plymouthd                   udevadm
+cimauth                      ipa-replica-prepare        plymouth-set-default-theme  umount.nfs
+cimconfig                    ipa-restore                pm-hibernate                umount.nfs4
+cimprovagt                   ipa-rmkeytab               pm-powersave                umount.udisks2
+cimreparchive                ipa-server-certinstall     pm-suspend                  unbound-anchor
+cimserver                    ipa-server-install         pm-suspend-hybrid           unix_chkpwd
+cimtrust                     ipa-server-upgrade         pm-utils-bugreport-info.sh  unix_update
+cleanallruv.pl               ipa-winsync-migrate        postalias                   update-alternatives
+clock                        ipmaddr                    postcat                     update-pciids
+clockdiff                    iprconfig                  postconf                    update-smart-drivedb
+consoletype                  iprdbg                     postdrop                    upgradedb
+convertquota                 iprdump                    postfix                     upgradednformat
+cracklib-check               iprinit                    postkick                    usb_modeswitch
+cracklib-format              iprsos                     postlock                    usb_modeswitch_dispatcher
+cracklib-packer              iprupdate                  postlog                     usbmuxd
+cracklib-unpacker            ipsec                      postmap                     useradd
+crda                         ipset                      postmulti                   userdel
+create-cracklib-dict         iptables                   postqueue                   userhelper
+crond                        iptables-restore           postsuper                   usermod
+cryptsetup                   iptables-save              poweroff                    usernetctl
+ctrlaltdel                   iptunnel                   powertop                    usn-tombstone-cleanup.pl
+ctstat                       irqbalance                 pppd                        vdptool
+cupsaccept                   iscsiadm                   pppdump                     verify-db.pl
+cupsaddsmb                   iscsid                     pppoe-discovery             vgcfgbackup
+cups-browsed                 iscsi-iname                pppstats                    vgcfgrestore
+cupsctl                      iscsistart                 ppp-watch                   vgchange
+cupsd                        iscsiuio                   pvchange                    vgck
+cupsdisable                  iw                         pvck                        vgconvert
+cupsenable                   kadmind                    pvcreate                    vgcreate
+cupsfilter                   _kadmind                   pvdisplay                   vgdisplay
+cups-genppd.5.2              kadmin.local               pvmove                      vgexport
+cups-genppdupdate            kdb5_util                  pvremove                    vgextend
+cupsreject                   kexec                      pvresize                    vgimport
+custodia                     key.dns_resolver           pvs                         vgimportclone
+db2bak                       killall5                   pvscan                      vgmerge
+db2bak.pl                    kpartx                     pwck                        vgmknodes
+db2index                     kpatch                     pwconv                      vgreduce
+db2index.pl                  kprop                      pwhistory_helper            vgremove
+db2ldif                      kpropd                     pwunconv                    vgrename
+db2ldif.pl                   _kpropd                    quot                        vgs
+dbmon.sh                     kproplog                   quotacheck                  vgscan
+dbverify                     krb5kdc                    quotaoff                    vgsplit
+dcbtool                      ksmtuned                   quotaon                     vigr
+debugfs                      latencytop                 quotastats                  vipw
+delpart                      latencytop-tui             radvd                       virtlockd
+depmod                       lchage                     radvdump                    virtlogd
+devlink                      ldattach                   raid-check                  virt-what
+dhclient                     ldconfig                   rasdaemon                   visudo
+dhclient-script              ldif2db                    ras-mc-ctl                  vlvindex
+dm_dso_reg_tool              ldif2db.pl                 rdisc                       vmcore-dmesg
+dmeventd                     ldif2ldap                  rdma                        vpddecode
+dmevent_tool                 ledctl                     rdma-ndd                    weak-modules
+dmfilemapd                   ledmon                     readprofile                 wipefs
+dmidecode                    lgroupadd                  realm                       wpa_cli
+dmraid                       lgroupdel                  reboot                      wpa_passphrase
+dmraid.static                lgroupmod                  regdbdump                   wpa_supplicant
+dmsetup                      libvirtd                   reject                      xfs_admin
+dmstats                      lid                        remotectl                   xfs_bmap
+dn2rdn                       liveinst                   remove-ds.pl                xfs_copy
+dnsmasq                      lldpad                     repquota                    xfs_db
+dosfsck                      lldptool                   repupgrade                  xfsdump
+dosfslabel                   lnewusers                  request-key                 xfs_estimate
+dracut                       lnstat                     resize2fs                   xfs_freeze
+ds_selinux_enabled           loaderinfo                 resizepart                  xfs_fsr
+ds_selinux_port_query        load_policy                restart-dirsrv              xfs_growfs
+ds_systemd_ask_password_acl  lockdev                    restorecon                  xfs_info
+dump-acct                    logrotate                  restoreconfig               xfsinvutil
+dumpe2fs                     logsave                    rfkill                      xfs_io
+dump-utmp                    losetup                    rhn-channel                 xfs_logprint
+e2freefrag                   lpadmin                    rhn_check                   xfs_mdrestore
+e2fsck                       lpasswd                    rhn-profile-sync            xfs_metadump
+e2image                      lpc                        rhn_register                xfs_mkfile
+e2label                      lpc.cups                   rhnreg_ks                   xfs_ncheck
+e2undo                       lpinfo                     rhnsd                       xfs_quota
+e4defrag                     lpmove                     rmmod                       xfs_repair
+eapol_test                   lshw                       rngd                        xfsrestore
+ebtables                     lsmod                      rotatelogs                  xfs_rtcp
+ebtables-restore             lsof                       route                       xqmstats
+ebtables-save                lspci                      routef                      xtables-multi
+edquota                      luseradd                   routel                      yum-complete-transaction
+era_check                    luserdel                   rpcbind                     yumdb
+era_dump                     lusermod                   rpcdebug                    zdump
+era_invalidate               lvchange                   rpc.gssd                    zic
+era_restore                  lvconvert                  rpc.idmapd                  zramctl
+ether-wake                   lvcreate                   rpcinfo
+ethtool                      lvdisplay                  rpc.mountd
+eventlogadm                  lvextend                   rpc.nfsd
+
+[cs45aa24@mc-redhat01 log]$ ls -F /usr/sbin
+abrt-auto-reporting*          exportfs*                   lvm*                         rpc.rquotad*
+abrt-configuration*           faillock*                   lvmconf*                     rpc.statd*
+abrtd*                        fatlabel*                   lvmconfig@                   rsyslogd*
+abrt-dbus*                    fcgistarter*                lvmdiskscan@                 rtacct*
+abrt-harvest-pstoreoops*      fcnsq*                      lvmdump*                     rtcwake*
+abrt-harvest-vmcore*          fcoeadm*                    lvmetad*                     rtkitctl*
+abrt-install-ccpp-hook*       fcoemon*                    lvmpolld*                    rtmon*
+abrt-server*                  fcping*                     lvmsadc@                     rtpr*
+accept@                       fcrls*                      lvmsar@                      rtstat@
+accessdb*                     fdformat*                   lvreduce@                    runlevel@
+accton*                       fdisk*                      lvremove@                    runuser*
+activate-devpay*              filefrag*                   lvrename@                    sa*
+addgnupghome*                 findfs*                     lvresize@                    safe_finger*
+addpart*                      fipvlan*                    lvs@                         saned*
+adduser@                      firewalld*                  lvscan@                      saslauthd*
+agetty*                       firstboot*                  makedumpfile*                sasldblistusers2*
+alsabat-test.sh*              fixfiles*                   matchpathcon*                saslpasswd2*
+alsactl*                      fixparts*                   mcelog*                      saveconfig*
+alsa-info*                    fixup-linkedattrs.pl*       mdadm*                       schema-reload.pl*
+alsa-info.sh@                 fixup-memberof.pl*          mdmon*                       scsieject*
+alternatives*                 fsadm*                      migrate-ds.pl*               scsitape*
+amaddclient*                  fsck*                       mii-diag*                    sedispatch*
+amadmin*                      fsck.btrfs*                 mii-tool*                    sefcontext_compile*
+amaespipe*                    fsck.cramfs*                mkdict@                      selabel_digest*
+amandad@                      fsck.ext2*                  mkdosfs@                     selabel_lookup*
+amarchiver*                   fsck.ext3*                  mkdumprd*                    selabel_lookup_best_match*
+amcheck*                      fsck.ext4*                  mke2fs*                      selabel_partial_match*
+amcheckdb*                    fsck.fat*                   mkfs*                        selinuxconlist*
+amcheckdump*                  fsck.minix*                 mkfs.btrfs*                  selinuxdefcon*
+amcleanup*                    fsck.msdos@                 mkfs.cramfs*                 selinuxenabled*
+amcleanupdisk*                fsck.vfat@                  mkfs.ext2*                   selinuxexeccon*
+amcrypt*                      fsck.xfs*                   mkfs.ext3*                   selinux_restorecon*
+amcrypt-ossl*                 fsfreeze*                   mkfs.ext4*                   semanage*
+amcrypt-ossl-asym*            fstrim*                     mkfs.fat*                    semodule*
+amcryptsimple*                fuser*                      mkfs.minix*                  sendmail@
+amdevcheck*                   fxload*                     mkfs.msdos@                  sendmail.postfix*
+amdump*                       gdisk*                      mkfs.vfat@                   service*
+amfetchdump*                  gdm*                        mkfs.xfs*                    sestatus*
+amflush*                      gencert*                    mkhomedir_helper*            setcap*
+amgetconf*                    genhomedircon@              mklost+found*                setenforce*
+amgpgcrypt*                   genhostid*                  mkswap*                      setfiles*
+amlabel*                      genl*                       ModemManager*                setpci*
+amoverview*                   genl-ctrl-list*             modinfo@                     setquota*
+amplot*                       getcap*                     modprobe@                    setregdomain*
+amreport*                     getenforce*                 monitor*                     setroubleshootd*
+amrestore*                    getpcaps*                   mount.cifs*                  setsebool*
+amrmtape*                     getsebool*                  mount.fuse*                  setup*
+amserverconfig*               glibc_post_upgrade.x86_64*  mount.nfs*                   setup-ds.pl*
+amservice*                    gluster*                    mount.nfs4@                  sfdisk*
+amstatus*                     groupadd*                   mountstats*                  sgdisk*
+amtape*                       groupdel*                   mpathconf*                   sgpio*
+amtapetype*                   groupmems*                  mpathpersist*                showmount*
+amtoc*                        groupmod*                   mtr*                         shutdown@
+amvault*                      grpck*                      mtx*                         skdump*
+anaconda*                     grpconv*                    multipath*                   sktest*
+anacron*                      grpunconv*                  multipathd*                  slattach*
+apachectl*                    grub2-bios-setup*           nameif*                      sln*
+applygnupgdefaults*           grub2-get-kernel-settings*  netreport*                   slpd*
+arp*                          grub2-install*              netscsid*                    smartctl*
+arpd*                         grub2-macbless*             NetworkManager*              smartd*
+arping*                       grub2-mkconfig*             new-kernel-pkg*              smbd*
+atd*                          grub2-ofpathname*           newusers*                    sm-notify*
+atrun*                        grub2-probe*                nfsdcltrack*                 smtp-sink*
+audispd*                      grub2-reboot*               nfsidmap*                    smtp-source*
+auditctl*                     grub2-rpm-sort*             nfsiostat*                   snmpd*
+auditd*                       grub2-set-default*          nfsstat*                     snmptrapd*
+augenrules*                   grub2-setpassword*          nisserver-plugin-defs*       sosreport*
+aureport*                     grub2-sparc64-setup*        nl-class-add*                spacewalk-channel*
+ausearch*                     grubby*                     nl-class-delete*             spice-vdagentd*
+authconfig@                   gssproxy*                   nl-classid-lookup*           ss*
+authconfig-tui@               halt@                       nl-class-list*               sserver*
+automount*                    handle-sshpw*               nl-cls-add*                  sshd*
+autrace*                      hardlink*                   nl-cls-delete*               sshd-keygen*
+avahi-daemon*                 htcacheclean*               nl-cls-list*                 sss_cache*
+avcstat*                      httpd*                      nl-link-list*                sssd*
+badblocks*                    hwclock*                    nl-pktloc-lookup*            start-dirsrv*
+bak2db*                       hwloc-dump-hwdata*          nl-qdisc-add*                start-statd*
+bak2db.pl*                    hypervfcopyd*               nl-qdisc-delete*             status-dirsrv*
+biosdecode*                   hypervkvpd*                 nl-qdisc-list*               stinit*
+biosdevname*                  hypervvssd*                 nmbd*                        stop-dirsrv*
+blkdeactivate*                iconvconfig*                nologin*                     subscription-manager*
+blkdiscard*                   iconvconfig.x86_64*         ns-accountstatus.pl*         subscription-manager-gui*
+blkid*                        ifcfg*                      ns-activate.pl*              suexec*
+blkmapd*                      ifconfig*                   ns-inactivate.pl*            suffix2instance*
+blockdev*                     ifdown*                     ns-newpwpolicy.pl*           sulogin*
+bonobo-activation-sysconf*    ifenslave*                  ns-slapd*                    sushell*
+bpftool*                      ifstat*                     nss_pcache@                  swaplabel*
+brctl*                        ifup*                       nstat*                       swapoff*
+bridge*                       init@                       ntpd*                        swapon*
+btrfs*                        insmod@                     ntpdate*                     switch_root*
+btrfsck@                      install-info*               ntpdc*                       syntax-validate.pl*
+btrfs-convert*                installkernel*              ntp-keygen*                  sysctl*
+btrfs-debug-tree*             intel-microcode2ucode*      ntpq*                        syspurpose*
+btrfs-find-root*              iotop*                      ntptime*                     sys-unconfig*
+btrfs-image*                  ip*                         ntsysv*                      tapeinfo*
+btrfs-map-logical*            ip6tables@                  oddjobd*                     tc*
+btrfs-select-super*           ip6tables-restore@          osd_login*                   tcpd*
+btrfstune*                    ip6tables-save@             ownership*                   tcpdmatch*
+btrfs-zero-log*               ipa-advise*                 packer@                      tcpdump*
+build-locale-archive*         ipa-backup*                 pam_console_apply*           tcpslice*
+cacertdir_rehash*             ipa-cacert-manage*          pam_tally2*                  tcsd*
+cache_check@                  ipa-ca-install*             pam_timestamp_check*         telinit@
+cache_dump@                   ipa-cert-fix*               paperconfig*                 testsaslauthd*
+cache_metadata_size@          ipa-certupdate*             parted*                      thin_check@
+cache_repair@                 ipa-client-automount*       partprobe*                   thin_delta@
+cache_restore@                ipa-client-install*         partx*                       thin_dump@
+cache_writeback@              ipa-compat-manage*          pdata_tools*                 thin_ls@
+capsh*                        ipa-crlgen-manage*          pethtool*                    thin_metadata_size@
+cbq*                          ipa-csreplica-manage*       pidof@                       thin_repair@
+certmonger*                   ipactl*                     pifconfig*                   thin_restore@
+cfdisk*                       ipa-getkeytab*              ping6@                       thin_rmap@
+cgdisk*                       ipa-join*                   pivot_root*                  thin_trim@
+chat*                         ipa-kra-install*            pkidestroy*                  tickadj*
+chcpu*                        ipa-ldap-updater*           pki-server*                  tomcat*
+chgpasswd*                    ipa-managed-entries*        pki-server-nuxwdog*          tracepath@
+chkconfig*                    ipa-nis-manage*             pki-server-upgrade*          tracepath6@
+chpasswd*                     ipa-otptoken-import*        pkispawn*                    try-from*
+chronyd*                      ipa-pkinit-manage*          pki-upgrade*                 tune2fs*
+chroot*                       ipa-replica-conncheck*      plipconfig*                  tuned*
+cifs.idmap*                   ipa-replica-install*        pluginviewer*                tuned-adm*
+cifs.upcall*                  ipa-replica-manage*         plymouthd*                   udevadm@
+cimauth*                      ipa-replica-prepare*        plymouth-set-default-theme*  umount.nfs@
+cimconfig*                    ipa-restore*                pm-hibernate@                umount.nfs4@
+cimprovagt*                   ipa-rmkeytab*               pm-powersave*                umount.udisks2*
+cimreparchive*                ipa-server-certinstall*     pm-suspend@                  unbound-anchor*
+cimserver*                    ipa-server-install*         pm-suspend-hybrid@           unix_chkpwd*
+cimtrust*                     ipa-server-upgrade*         pm-utils-bugreport-info.sh*  unix_update*
+cleanallruv.pl*               ipa-winsync-migrate*        postalias*                   update-alternatives@
+clock@                        ipmaddr*                    postcat*                     update-pciids*
+clockdiff*                    iprconfig*                  postconf*                    update-smart-drivedb*
+consoletype*                  iprdbg*                     postdrop*                    upgradedb*
+convertquota*                 iprdump*                    postfix*                     upgradednformat*
+cracklib-check*               iprinit*                    postkick*                    usb_modeswitch*
+cracklib-format*              iprsos*                     postlock*                    usb_modeswitch_dispatcher*
+cracklib-packer*              iprupdate*                  postlog*                     usbmuxd*
+cracklib-unpacker*            ipsec*                      postmap*                     useradd*
+crda*                         ipset*                      postmulti*                   userdel*
+create-cracklib-dict*         iptables@                   postqueue*                   userhelper*
+crond*                        iptables-restore@           postsuper*                   usermod*
+cryptsetup*                   iptables-save@              poweroff@                    usernetctl*
+ctrlaltdel*                   iptunnel*                   powertop*                    usn-tombstone-cleanup.pl*
+ctstat@                       irqbalance*                 pppd*                        vdptool*
+cupsaccept*                   iscsiadm*                   pppdump*                     verify-db.pl*
+cupsaddsmb*                   iscsid*                     pppoe-discovery*             vgcfgbackup@
+cups-browsed*                 iscsi-iname*                pppstats*                    vgcfgrestore@
+cupsctl*                      iscsistart*                 ppp-watch*                   vgchange@
+cupsd*                        iscsiuio*                   pvchange@                    vgck@
+cupsdisable@                  iw*                         pvck@                        vgconvert@
+cupsenable@                   kadmind*                    pvcreate@                    vgcreate@
+cupsfilter*                   _kadmind*                   pvdisplay@                   vgdisplay@
+cups-genppd.5.2*              kadmin.local*               pvmove@                      vgexport@
+cups-genppdupdate*            kdb5_util*                  pvremove@                    vgextend@
+cupsreject@                   kexec*                      pvresize@                    vgimport@
+custodia*                     key.dns_resolver*           pvs@                         vgimportclone@
+db2bak*                       killall5*                   pvscan@                      vgmerge@
+db2bak.pl*                    kpartx*                     pwck*                        vgmknodes@
+db2index*                     kpatch*                     pwconv*                      vgreduce@
+db2index.pl*                  kprop*                      pwhistory_helper*            vgremove@
+db2ldif*                      kpropd*                     pwunconv*                    vgrename@
+db2ldif.pl*                   _kpropd*                    quot*                        vgs@
+dbmon.sh*                     kproplog*                   quotacheck*                  vgscan@
+dbverify*                     krb5kdc*                    quotaoff@                    vgsplit@
+dcbtool*                      ksmtuned*                   quotaon*                     vigr@
+debugfs*                      latencytop*                 quotastats*                  vipw*
+delpart*                      latencytop-tui*             radvd*                       virtlockd*
+depmod@                       lchage*                     radvdump*                    virtlogd*
+devlink*                      ldattach*                   raid-check*                  virt-what*
+dhclient*                     ldconfig*                   rasdaemon*                   visudo*
+dhclient-script*              ldif2db*                    ras-mc-ctl*                  vlvindex*
+dm_dso_reg_tool*              ldif2db.pl*                 rdisc*                       vmcore-dmesg*
+dmeventd*                     ldif2ldap*                  rdma*                        vpddecode*
+dmevent_tool*                 ledctl*                     rdma-ndd*                    weak-modules*
+dmfilemapd*                   ledmon*                     readprofile*                 wipefs*
+dmidecode*                    lgroupadd*                  realm*                       wpa_cli*
+dmraid*                       lgroupdel*                  reboot@                      wpa_passphrase*
+dmraid.static@                lgroupmod*                  regdbdump*                   wpa_supplicant*
+dmsetup*                      libvirtd*                   reject@                      xfs_admin*
+dmstats@                      lid*                        remotectl*                   xfs_bmap*
+dn2rdn*                       liveinst*                   remove-ds.pl*                xfs_copy*
+dnsmasq*                      lldpad*                     repquota*                    xfs_db*
+dosfsck@                      lldptool*                   repupgrade*                  xfsdump*
+dosfslabel@                   lnewusers*                  request-key*                 xfs_estimate*
+dracut@                       lnstat*                     resize2fs*                   xfs_freeze*
+ds_selinux_enabled*           loaderinfo*                 resizepart*                  xfs_fsr*
+ds_selinux_port_query*        load_policy*                restart-dirsrv*              xfs_growfs*
+ds_systemd_ask_password_acl*  lockdev*                    restorecon@                  xfs_info*
+dump-acct*                    logrotate*                  restoreconfig*               xfsinvutil*
+dumpe2fs*                     logsave*                    rfkill*                      xfs_io*
+dump-utmp*                    losetup*                    rhn-channel@                 xfs_logprint*
+e2freefrag*                   lpadmin*                    rhn_check*                   xfs_mdrestore*
+e2fsck*                       lpasswd*                    rhn-profile-sync*            xfs_metadump*
+e2image*                      lpc@                        rhn_register*                xfs_mkfile*
+e2label*                      lpc.cups*                   rhnreg_ks*                   xfs_ncheck*
+e2undo*                       lpinfo*                     rhnsd*                       xfs_quota*
+e4defrag*                     lpmove*                     rmmod@                       xfs_repair*
+eapol_test*                   lshw*                       rngd*                        xfsrestore*
+ebtables*                     lsmod@                      rotatelogs*                  xfs_rtcp*
+ebtables-restore*             lsof*                       route*                       xqmstats*
+ebtables-save*                lspci*                      routef*                      xtables-multi*
+edquota*                      luseradd*                   routel*                      yum-complete-transaction*
+era_check@                    luserdel*                   rpcbind*                     yumdb*
+era_dump@                     lusermod*                   rpcdebug*                    zdump*
+era_invalidate@               lvchange@                   rpc.gssd*                    zic*
+era_restore@                  lvconvert@                  rpc.idmapd*                  zramctl*
+ether-wake*                   lvcreate@                   rpcinfo*
+ethtool*                      lvdisplay@                  rpc.mountd*
+eventlogadm*                  lvextend@                   rpc.nfsd*
+
+6.
+[cs45aa24@mc-redhat01 ~]$ ls -l
+total 0
+drwxrwxr-x. 17 cs45aa24 cs45aa24 207 Sep 17 01:48 homework
+[cs45aa24@mc-redhat01 ~]$ ls -a
+.  ..  .bash_history  .bash_logout  .bash_profile  .bashrc  .cache  .config  homework  .lesshst  .mozilla  .mydatafile  .viminfo
+[cs45aa24@mc-redhat01 ~]$ ls -al
+total 40
+drwx------.  6 cs45aa24 cs45aa24  195 Sep 17 23:30 .
+drwxr-xr-x. 50 root     root     4096 Sep 19 01:58 ..
+-rw-------.  1 cs45aa24 cs45aa24 7531 Sep 23 00:40 .bash_history
+-rw-r--r--.  1 cs45aa24 cs45aa24   18 Aug 21  2019 .bash_logout
+-rw-r--r--.  1 cs45aa24 cs45aa24  193 Aug 21  2019 .bash_profile
+-rw-r--r--.  1 cs45aa24 cs45aa24  231 Aug 21  2019 .bashrc
+drwxrwxr-x.  3 cs45aa24 cs45aa24   18 Sep  4 21:59 .cache
+drwxrwxr-x.  3 cs45aa24 cs45aa24   18 Sep  4 21:59 .config
+drwxrwxr-x. 17 cs45aa24 cs45aa24  207 Sep 17 01:48 homework
+-rw-------.  1 cs45aa24 cs45aa24 3160 Sep  9 18:32 .lesshst
+drwxr-xr-x.  4 cs45aa24 cs45aa24   39 Sep  3 22:26 .mozilla
+-rw-rw-r--.  1 cs45aa24 cs45aa24  139 Sep 17 00:47 .mydatafile
+-rw-------.  1 cs45aa24 cs45aa24 4967 Sep 17 23:30 .viminfo
+[cs45aa24@mc-redhat01 ~]$ pwd; cal > .mydatafile
+/home/cs45aa24
+[cs45aa24@mc-redhat01 ~]$ cat .mydatafile
+   September 2020
+Su Mo Tu We Th Fr Sa
+       1  2  3  4  5
+ 6  7  8  9 10 11 12
+13 14 15 16 17 18 19
+20 21 22 23 24 25 26
+27 28 29 30
+
+7.
+[cs45aa24@mc-redhat01 home]$ cd $HOME; pwd; ls -a
+/home/cs45aa24
+.  ..  .bash_history  .bash_logout  .bash_profile  .bashrc  .cache  .config  homework  .lesshst  .mozilla  .mydatafile  .viminfo
+[cs45aa24@mc-redhat01 ~]$ cd ..
+[cs45aa24@mc-redhat01 home]$ pwd
+/home
+[cs45aa24@mc-redhat01 home]$ cd ..
+[cs45aa24@mc-redhat01 /]$ pwd
+/
+
+8.
+[cs45aa24@mc-redhat01 /]$ cd -
+/home
+[cs45aa24@mc-redhat01 home]$ pwd
+/home
+
+9.
+[cs45aa24@mc-redhat01 home]$ cd /home/cs45aa24
+[cs45aa24@mc-redhat01 ~]$ pwd
+/home/cs45aa24
+[cs45aa24@mc-redhat01 ~]$ cd /var/log
+[cs45aa24@mc-redhat01 log]$ pwd
+/var/log
+[cs45aa24@mc-redhat01 log]$ cd ..
+[cs45aa24@mc-redhat01 var]$ pwd
+/var
+[cs45aa24@mc-redhat01 var]$ cd ~mr-tester
+[cs45aa24@mc-redhat01 mr-tester]$ pwd
+/home/mr-tester
+[cs45aa24@mc-redhat01 mr-tester]$ cd -
+/var
+[cs45aa24@mc-redhat01 var]$ pwd
+/var
+
+10.
+[cs45aa24@mc-redhat01 var]$ mkdir $HOME/globbers
+[cs45aa24@mc-redhat01 var]$ ls -d $HOME/globbers
+/home/cs45aa24/globbers
+[cs45aa24@mc-redhat01 var]$ ls -dl $HOME/globbers
+drwxrwxr-x. 2 cs45aa24 cs45aa24 6 Sep 23 01:07 /home/cs45aa24/globbers
+
+11.
+[cs45aa24@mc-redhat01 ~]$ touch filex filey filez file555 file60 file70 file100 file200 foo fox
+
+12.
+[cs45aa24@mc-redhat01 ~]$ ls f??
+foo  fox
+[cs45aa24@mc-redhat01 ~]$ ls f*x
+filex  fox
+[cs45aa24@mc-redhat01 ~]$ ls f*[2]*
+file200
+[cs45aa24@mc-redhat01 ~]$ ls f*2*
+file200
+[cs45aa24@mc-redhat01 ~]$ ls f*[2-9]
+file555
+[cs45aa24@mc-redhat01 ~]$ ls f*[0-9][0-9]
+file100  file200  file555  file60  file70
+[cs45aa24@mc-redhat01 ~]$ ls f*[0-9][0-9]*
+file100  file200  file555  file60  file70
+[cs45aa24@mc-redhat01 ~]$ ls f[!i]*
+foo  fox
+
+13.
+[cs45aa24@mc-redhat01 ~]$ touch file_one file_two
+
+14.
+[cs45aa24@mc-redhat01 ~]$ ls -a
+.   .bash_history  .bash_profile  .cache   file100  file555  file70    file_two  filey  foo  globbers  .lesshst  .mydatafile
+..  .bash_logout   .bashrc        .config  file200  file60   file_one  filex     filez  fox  homework  .mozilla  .viminfo
+
+15.
+[cs45aa24@mc-redhat01 ~]$ cat > tester_file
+I am the first line in this file
+I am the second line in this file
+This is the last line in this file[cs45aa24@mc-redhat01 ~]$
+
+16.
+[cs45aa24@mc-redhat01 ~]$ cat tester_file
+I am the first line in this file
+I am the second line in this file
+This is the last line in this file
+
+17.
+[cs45aa24@mc-redhat01 ~]$ nano tester_file_2
+I am first line in tester_file_2
+I am second line in tester_file_2
+
+18.
+[cs45aa24@mc-redhat01 ~]$ vi tester-v
+I am tester line one
+I am tester line 2
+This is line 3
+
+19.
+[cs45aa24@mc-redhat01 ~]$ mkdir /home/cs45aa24/dirx
+[cs45aa24@mc-redhat01 ~]$ cd $HOME/dirx
+
+20.
+[cs45aa24@mc-redhat01 dirx]$ pwd
+/home/cs45aa24/dirx
+[cs45aa24@mc-redhat01 dirx]$ mkdir ../diry
+
+21.
+[cs45aa24@mc-redhat01 dirx]$ mkdir ../../../tmp/hcampbell-tester
+
+22.
+[cs45aa24@mc-redhat01 dirx]$ mkdir /tmp/hcampbell-tester2
+
+23.
+[cs45aa24@mc-redhat01 dirx]$ touch /tmp/hcampbell-tester/data-file
+
+24.
+[cs45aa24@mc-redhat01 dirx]$ mkdir /tmp/dirz/dirz
+mkdir: cannot create directory /tmp/dirz/dirz: File exists
+
+25.
+[cs45aa24@mc-redhat01 dirx]$ mkdir -p /tmp/dirR/dirS
+
+26.
+[cs45aa24@mc-redhat01 dirx]$ rm /tmp/hcampbell-tester
+rm: cannot remove /tmp/hcampbell-tester: Is a directory
+
+27.
+[cs45aa24@mc-redhat01 dirx]$ rm /tmp/hcampbell-tester2
+rm: cannot remove /tmp/hcampbell-tester2: Is a directory
+
+28.
+[cs45aa24@mc-redhat01 dirx]$ rm -r /tmp/hcampbell-tester2
+[cs45aa24@mc-redhat01 dirx]$ ls /tmp/hcampbell-tester2
+ls: cannot access /tmp/hcampbell-tester2: No such file or directory
+
+29.
+[cs45aa24@mc-redhat01 dirx]$ touch Afile Bfile Cfile
+[cs45aa24@mc-redhat01 dirx]$ ls
+Afile  Bfile  Cfile
+[cs45aa24@mc-redhat01 dirx]$ rm Afile
+[cs45aa24@mc-redhat01 dirx]$ ls
+Bfile  Cfile
+[cs45aa24@mc-redhat01 dirx]$ rm Bfile
+[cs45aa24@mc-redhat01 dirx]$ ls
+Cfile
+[cs45aa24@mc-redhat01 dirx]$ rm Cfile
+[cs45aa24@mc-redhat01 dirx]$ ls
+

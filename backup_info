@@ -1,0 +1,16 @@
+Write a program to read input from a user
+   1. Display a menu to ask the user for their name
+   2. Use a function call to call the 'menu' function from a file called 'myfunctions'
+        --ask ...what directories do you want to back up?
+              ...Do you want to comprees your data?
+   3. After you get the users name, ask them if they want to backup their home directory"
+   4. $HOME/.secret/.backup   --> mkdir -p $HOME/.secret/.backup
+      BACKUP_DIR="$HOME/.secret/.backup"
+      Change permissions of BACKUP_DIR to 700   # chmod 700 $BACKUP_DIR
+
+   5. Your script will copy regular files from $HOME/homework BACKUP_DIR 
+   6. Ask your users if they want to compress their files...Check to see that it's a 
+      file. If it's a file, then compress before you do your backup. Or,....think of
+      another way to save space.
+
+   

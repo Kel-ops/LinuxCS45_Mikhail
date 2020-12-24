@@ -1,0 +1,107 @@
+Mikhail Ball
+cis45
+Week 1 written assignment
+
+
+1. What is the Linux Operating System?
+The core component is the kernel. The operating system takes The kernel, the GNU utilities and a graphical desktop environment and runs them together as a seamless system.
+
+2. Name at least 3 major parts of what makes up the Operating System?
+The Linux kernel, The GNU utilities, and a graphical desktop environment.
+
+3. The Kernel is the heart of the Linux Operating System.  How can you tell what version of the kernel you are running?
+uname -a, The first number is the major number, the second number is the minor number, the third number is the release. If you see 4 numbers the last one is the package version
+Even minor numbers are production, Odd minor numbers are development
+
+4. What are the parts of the Kernel and what do they do?
+  -system memory management: Manage the physical and virtual memory
+
+  -software program management: Manages all the processes running on the system
+
+  -hardware management: communication for any connected device by reading the driver code inside the kernel code.
+
+  -filesystem management: Reading and writing to and from filesystems
+
+5. What is a Process?
+Any running program.
+
+6. What does running in the foreground and running in the background means?
+Foreground outputs information displayed to the user, Background performs functions behind the scenes.
+
+7. What is the name of the first process that the Linux system creates?
+init process
+
+8. Kernel communicate with devices through Drivers ( True or False )____.]
+True
+
+9. There is no need to rebuild the kernel when you install new devices because Modules allow you to insert and remove Driver code in the Live Kernel. ( True or False)____.
+True
+
+10. All devices in Linux are identified by the kernel as Files. The types of files are Character, Block and Network.(True or False)____.
+True
+
+11. Describe what a character device is and give one example.
+A device that handles data one character at a time such as modems and terminals.
+
+12. Block devices handles data blocks at a time--example are Disk Drives--(True or false)
+True
+
+13. Which kind of file type will be used to send packets?
+Network Device type file
+
+14. What is the name of the special device files created by Linux for all devices on the system and makes use of a Major number and a Minor Number?
+Nodes
+
+15. What is a File System?
+A system that controls how data is stored and retrieved
+
+16. List at least 3 Linux file system types?
+ext4,nfs,msdos
+
+17. What is GNU? Who started the concept?
+GNU's Not Unix. Richard Stallman
+
+18. Describe the purpose of the SHELL
+It provides users a way to start programs, manage files on the filesystem, and manage processes running on the kernel
+
+
+19. What piece of software works directly with your Video card and Monitor in the PC when it comes to presenting graphics?
+The X Window System
+
+20. List at least 2 Desktops for Linux.
+KDE Desktop, GNOME Desktop
+
+21. What do you call a complete Linux system package?
+A distribution
+
+22. What is a Live CD and name at least 3 live Distros.
+Allows you to boot your PC and run Linux w/o installing anything on the hard drive
+Ubuntu, Puppy Linux, Slax
+
+23. What is a Console?
+The shells command line interface
+
+24. When Linux starts, it creates many virtual consoles. ( True or False)_____.
+True
+
+25. CLI (command line interface) was the only means of accessing Linux before the Graphical User Interfaces were developed(True or False) _____.
+Ture
+
+26. How to access the virtual console:
+CTRL + ALT + { F1 to F7 } Depending on the virtual console you want to use.
+
+
+27. What two things must every user have to log onto a Linux system?
+User ID and password
+
+28. How do you see what shell you are in?
+echo $0
+
+29. Linux is an operating system and has a hierarchical file system that begins with the root directory '/'.  All files and directories are created relative to the '/' directory( True or False)?
+True
+
+30. How do you switch user from one user to another?
+su = Switch user
+[su -] (Will read your profile and puts you in the original shell that you are setup in)
+[su] with no dash switches and starts fresh
+

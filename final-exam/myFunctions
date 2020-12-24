@@ -1,0 +1,74 @@
+# Written by Mikhail Ball
+# Three functions in here
+# menu collects 2 numbers and ask what you would like to do with them
+# check_args verified the second digit is not zero
+# basic calc does the math
+
+
+function calc_menu(){
+echo "Welcome to CS45's basic math box"
+echo "Chose whether you want to add, subtract, divide, or multiply"
+echo "Then select two numbers"
+echo ""
+select option in Add Subtract Multiply Divide
+do
+response=$REPLY
+break
+done
+echo "What two numbers would you like to use?"
+read var1 var2
+echo "You chose $var1 and $var2 and to $option"
+
+}
+
+
+function check_args(){
+
+# This will check arguments and verify the second number is not zero
+status=0
+if [ $var2 -ne 0 ]
+	then
+		status=1
+		echo "You picked some good numbers"
+else
+	echo "$var1 added / subtracked / multiplied / divided by zero is no fun" 
+	echo "Please try again"
+	calc_menu
+
+fi
+}
+
+
+
+function basic_calc(){
+
+# This will do basic math using brackets
+# Need to add a feature that returns an error if you select divide and either number is zero
+
+if [ $status -eq 1 ]
+	then
+		if [ $response -eq 1 ]
+			then
+				answer=$[ $var1 + $var2 ] 
+		elif [ $response -eq 2 ]
+			then
+				answer=$[ $var1 - $var2 ]
+		elif [ $response -eq 3 ]
+			then
+				answer=$[ $var1 * $var2 ]
+		elif [ $response -eq 4 ]
+			then
+				answer=$[ $var1 / $var2 ]
+		else
+			echo "uhh oh something went way wrong"
+		fi
+
+fi
+echo "$answer is what you get when you $option $var1 and $var2"
+
+
+
+}
+
+
+

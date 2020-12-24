@@ -1,0 +1,15 @@
+Mikhail Ball 
+Midterm Answers
+
+1A.
+find / -type f -exec egrep -riH '[a-zA-z]* [0-9]{3}-[0-9]{2}-[0-9]{4}$' {} \;  2> /dev/null
+1B.
+.ssn_file in the /etc/profile.d/ directory
+
+2.
+sed 's/^\([a-zA-Z]*[[:space:]]\)\([0-9]{3}[-][0-9]{2}[-][0-9]{4}\)/\2\1/' .ssn_file
+
+3.
+find / -inum 75344989 2> /dev/null
+
+

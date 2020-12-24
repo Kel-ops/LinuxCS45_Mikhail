@@ -1,0 +1,14 @@
+function menu(){
+echo "Welcome to generic menu"
+echo "------------------------------"
+echo "This utilities backs up all files in a given directory"
+cat <<END
+       Menu
+---------------------------------------
+    1. 
+    2. 
+    3. 
+    4. 
+---------------------------------------
+END
+}

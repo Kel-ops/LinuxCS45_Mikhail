@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Program that takes a file name, and checks too see if it already exits in the users directory tree
+# Take the name of a file
+# use a test command to see if that file exits
+
+read -p "Please enter the file name" FILE
+echo "you entered $FILE"
+echo "Checking to see if it exists"
+sleep 1
+if [ -e "$FILE" ]
+then 
+	echo "$FILE exists"
+else
+	echo "$FILE does NOT exist"
+fi
+

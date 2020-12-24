@@ -1,0 +1,82 @@
+Mikhail Ball
+CIS45
+Week 3 Written Assignment
+
+
+1. What is a hard link?
+A hard link creates a separate virtual file that contains information about original file and where to locate it. However they are physically the same file.
+
+
+2. What is a symbolic link?
+A symbolic link is a physical file that points to another file somewhere in the virtual directory structure. The files do not share the same content
+
+
+3. List three characteristics of a hard link.
+
+    a. Physically the same file as the linked file
+
+    b. The inode number will be the same as the linked file
+
+    c. number of links and file size will match the linked file
+
+
+
+4. List three characteristics of a symbolic link.
+
+     a. The -> symbol is displayed after the symbolic link file's long listing.
+
+     b. Does not share contents with linked file
+
+     c. inode number is different than linked file
+
+5. What does the history command do?
+Recalls the commands previously typed in the command line interface
+
+
+6. List the function of the tail command .
+Print the last 10 lines of a file to a standard output. (Number of lines can be specified but default is 10)
+
+
+
+7. List the function of the head command.
+The opposite of tail. prints the first 10 lines of a file to a standard output. (Number of lines can be specified but default is 10)
+
+
+8. How would you find the first 14 lines of a file?
+head -14 <file>
+
+
+9. What is the difference between 'searching' and 'sorting' ?
+Searching looks for a string and shows the related information.
+Sorting puts the information selected in some sort if specified order.
+
+
+
+10.  What is a process?
+Any running program 
+
+
+
+11. How do you find running processes on the system?
+ps -A
+top
+
+
+
+12. How would you kill a running process with the PID of 1325 ?
+kill 1325
+but if it is a runaway process - kill -s HUP 1325
+
+
+13. What does it mean to 'compress' data ?
+Take a file and make it smaller (taking up less space).
+The goal is to remove redundant data in each file by replacing common patterns with smaller variables
+
+
+14. What is the difference between copy(cp) and move(mv) ?
+copy makes a copy of the file to be in the original location and the new specified location with the new specified name
+
+
+15. What does it mean to 'archive'  a file or archive data ?
+To move a file or data that is no longer frequently used to a location for long term-retention. This will allow you to unarchive the data or file if you ever need it back.
+
